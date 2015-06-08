@@ -1,3 +1,4 @@
+# Corinne and Katie
 # Scrabble Sinatra
 
 We are going to use the functionality that we implemented in our Scrabble projects using the new Sinatra functionality we have learned.
