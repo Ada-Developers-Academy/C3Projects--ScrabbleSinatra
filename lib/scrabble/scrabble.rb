@@ -40,6 +40,17 @@ module ScrabbleSinatra
       end
     end
 
+    # returns all of the words and all of their scores (in a hash)
+    def self.score_multiple(array_of_words)
+      word_score = {}
+
+      array_of_words.each do |word|
+        word_score[word] = score(word)
+      end
+
+      return word_score
+    end
+
     # .highest_score_from(array_of_words): returns the word in the array with the highest score [breakfast]
     def self.highest_score_from(array_of_words)
       score_check = array_of_words.group_by { |word| score(word) }
