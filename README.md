@@ -25,6 +25,7 @@ This project...
 ## Lunch
 - Create a new page (route & view) which will allow the user to score multiple words.
   - This functionality should use the Scrabble functionality that scored an array of words.
+- In any view that shows a scored word, include a letter-by-letter breakdown showing the point value for each letter along with the score for the word. Avoid duplicating markup wherever possible; use partials to DRY up erb logic and HTML blocks.
 
 ## Dinner
 - Modify the Lunch form to include radio buttons that will change the way the words are scored. The user can choose which piece of information has the highest weight:
