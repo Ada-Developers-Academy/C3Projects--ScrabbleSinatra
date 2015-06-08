@@ -6,6 +6,16 @@ class MySite < Sinatra::Base
 
   get '/' do
   	@title = "Home"
-	erb :home
+	   erb :home
+  end
+
+  get '/score' do
+    @title = "Score"
+    erb :score
+  end
+
+  post '/score' do
+    @title = "Score"
+    erb :score
   end
 end
