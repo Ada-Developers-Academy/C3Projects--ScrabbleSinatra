@@ -7,4 +7,13 @@ class ScrabbleSinatra < Sinatra::Base
   get "/" do
     erb :home
   end
+
+  get "/score" do
+    erb :score
+  end
+
+  post "/score" do
+    erb :score
+  end
+
 end
