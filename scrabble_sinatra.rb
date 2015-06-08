@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require './lib/score.rb'
 
 class ScrabbleSinatra < Sinatra::Base
   register Sinatra::Reloader
