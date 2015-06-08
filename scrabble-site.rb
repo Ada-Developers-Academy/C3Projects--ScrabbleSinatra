@@ -13,6 +13,7 @@ class ScrabbleSite < Sinatra::Base
   end
 
   post "/score" do
+    Scrabble::ScoreWord.score_word(params[:word])
     erb :score
   end
 end
