@@ -24,3 +24,4 @@ Both individuals will clone the forked repo: $ git clone [YOUR FORKED REPO URL]
 
 ## Dessert
 - Implement a GET route that is equivalent to the form created for Breakfast.
+  - Hint: Think about idempotency; how could the breakfast functionality be implemented in a way that is idempotent?
