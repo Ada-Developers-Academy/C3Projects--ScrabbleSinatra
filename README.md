@@ -8,7 +8,6 @@ You'll be working on this assignment with a pair.
 Choose one person to fork and clone the repo.  
 Add the second individual as a collaborator to the forked repo.  
 Both individuals will clone the forked repo: $ git clone [YOUR FORKED REPO URL]  
-Both individuals cd into the dir created: $ cd ??????  
 
 ## Breakfast
 - Create a new Sinatra application with a home page that contains a link to a score page (route & view).
