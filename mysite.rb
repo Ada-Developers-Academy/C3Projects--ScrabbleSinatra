@@ -8,4 +8,10 @@ class MySite <Sinatra::Base
   get "/" do
     erb :score
   end
+
+  post "/" do
+    @word = params[:word]
+    @score = ScrabbleSinatra::ScrabbleSinatra.score(@word)
+    erb :score
+  end
 end

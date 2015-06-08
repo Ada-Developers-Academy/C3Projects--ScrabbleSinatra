@@ -4,3 +4,6 @@
   <input type="text" name="word" value="" id="word">
   <input type="submit" value="Submit">
 </form>
+<% unless @word.nil? %>
+  <p> Score for <%= @word %>: <%= @score %></p>
+  <% end %>
