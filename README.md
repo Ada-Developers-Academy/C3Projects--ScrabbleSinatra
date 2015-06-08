@@ -9,8 +9,17 @@ Choose one person to fork and clone the repo.
 Add the second individual as a collaborator to the forked repo.  
 Both individuals will clone the forked repo: $ git clone [YOUR FORKED REPO URL]  
 
+## Baseline
+Once you've acheived this baseline, take a walk around the room and see if you can answer questions or help other teams.
+
+This project...
+
+- needs a Gemfile so others are aware of its dependencies.
+- needs a `config.ru` file; look at the structure in the SinatraSite project for an example
+- should be started with `rackup` on the command line.
+
 ## Breakfast
-- Create a new Sinatra application with a home page that contains a link to a score page (route & view).
+- Create a new Sinatra application with a home page (route for '/') that contains a link to a score page (route & view).
 - The score page will include a form that contains one text input. This form will `POST` the word for scoring. The calculated score is then returned and displayed to the user.
 
 ## Lunch
