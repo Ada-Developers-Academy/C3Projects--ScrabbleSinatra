@@ -1,13 +1,13 @@
-# Scrabble Sinatra
+# KYNA NGUYEN + ASHLEY WATKINS -- Scrabble Sinatra
 
 We are going to use the functionality that we implemented in our Scrabble projects using the new Sinatra functionality we have learned.
 
 ## Setup
 
-You'll be working on this assignment with a pair.  
-Choose one person to fork and clone the repo.  
-Add the second individual as a collaborator to the forked repo.  
-Both individuals will clone the forked repo: $ git clone [YOUR FORKED REPO URL]  
+You'll be working on this assignment with a pair.
+Choose one person to fork and clone the repo.
+Add the second individual as a collaborator to the forked repo.
+Both individuals will clone the forked repo: $ git clone [YOUR FORKED REPO URL]
 
 ## Baseline
 Once you've acheived this baseline, take a walk around the room and see if you can answer questions or help other teams.
