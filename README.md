@@ -1,4 +1,4 @@
-# Scrabble Sinatra
+# Scrabble Sinatra - Sally & Brenna
 
 We are going to use the functionality that we implemented in our Scrabble projects using the new Sinatra functionality we have learned.
 
