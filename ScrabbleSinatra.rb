@@ -14,4 +14,8 @@ class ScrabbleSinatra < Sinatra::Base
     erb :score
   end
 
+  post "/score" do
+    erb #SOMETHING
+  end
+
 end
