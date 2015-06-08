@@ -1,1 +1,2 @@
-require './my-site'
+require './ScrabbleSinatra'
+run ScrabbleSinatra
