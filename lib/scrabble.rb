@@ -1,4 +1,4 @@
-module Scrabble
+module ScrabbleSinatra
   # require your gems and classes here
   require 'pathname'
 
