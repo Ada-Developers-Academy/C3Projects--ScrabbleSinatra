@@ -6,8 +6,12 @@ class ScrabbleSinatra < Sinatra::Base
   register Sinatra::Reloader
 
   get "/" do
-    erb :scrabble
+    erb :home
 
+  end
+
+  get "/score" do
+    erb :score
   end
 
 end
