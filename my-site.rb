@@ -1,5 +1,6 @@
 require "sinatra"
 require "sinatra/reloader"
+require "./lib/scrabble"
 
 class MySite < Sinatra::Base
   register Sinatra::Reloader
@@ -15,6 +16,8 @@ class MySite < Sinatra::Base
   end
 
   post '/score' do
+  	# call on scrabble.rb file here
+
     @title = "Score"
     erb :score
   end
