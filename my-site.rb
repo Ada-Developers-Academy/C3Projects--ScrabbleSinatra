@@ -1,5 +1,6 @@
 require "sinatra"
 require "sinatra/reloader"
+require "./lib/scoring.rb"
 
 class MySite < Sinatra::Base
   register Sinatra::Reloader
@@ -14,6 +15,7 @@ class MySite < Sinatra::Base
 
   post '/score' do
     @word = params[:word]
+    @score = Scrabble.score(@word)
     erb :score
   end
 end
