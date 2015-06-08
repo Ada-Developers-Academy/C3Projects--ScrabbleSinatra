@@ -12,4 +12,8 @@ class MySite < Sinatra::Base
     erb :score
   end
 
+  post '/score' do
+    @word = params[:word]
+    erb :score
+  end
 end
