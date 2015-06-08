@@ -1,0 +1,3 @@
+require './scrabble'
+
+run Scrabble
