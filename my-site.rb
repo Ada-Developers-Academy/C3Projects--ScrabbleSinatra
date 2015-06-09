@@ -15,4 +15,8 @@ class MySite < Sinatra::Base
   	erb :score
   end
 
+  get "/multi_score" do
+  	erb :multi_score
+  end
+
 end
