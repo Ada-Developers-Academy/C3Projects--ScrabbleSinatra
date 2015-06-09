@@ -13,13 +13,13 @@ module Scrabble ##require your gems and classes here # require_relative 'scrabbl
 
   class Scrabble
 
-   def self.score(word)
+    def self.score(word)
 
       return "Must pick a letter!" unless word[/[a-zA-Z]+/] == word && word.length > 0
       #If the input is a character that isn't a letter, or if it's an empty string, it brings up an error
 
       get_score(word)
-      
+
       sum = 0
       # for each letter
       @score_array.each do |score|
