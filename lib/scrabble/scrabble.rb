@@ -9,8 +9,10 @@ module ScrabbleSinatra
       q: 10, z: 10
     }
 
+    # this returns the score for each letter, total score for the word, and labels winning word
     def self.scoring(word_array, score_method)
       display_array = []
+      # checks if there is more than one word entered; used to label winning word
       winning_word = highest_score_from(word_array, score_method) if word_array.length > 1
       word_array.each do |word|
         letter_hash = score_multiple(word.split(//))
@@ -18,6 +20,7 @@ module ScrabbleSinatra
           display_array << "#{letter}: #{score}"
         end
         word_score = "#{word}: #{score(word)}"
+        # if winning_word is undefined then word not labeled
         word_score += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This one wins!" if word == winning_word
         display_array << word_score
       end
