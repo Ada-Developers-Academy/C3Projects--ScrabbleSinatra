@@ -11,6 +11,7 @@ class MySite < Sinatra::Base
 
   post "/" do
   	@word = params[:word]
+  	@score = Scrabble::Scrabble.score(@word)
   	erb :score
   end
 
