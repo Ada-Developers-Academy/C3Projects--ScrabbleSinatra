@@ -12,11 +12,11 @@
   <img src="/score.png" width = "400" alt= "scrabble score">
 
 <pre>
-  The word <%=params["word"]%> is worth
+  The word <%= @word %> is worth
 
   <%=
-  if params["word"] != nil
-    Scrabble::Scrabble.score(params["word"])
+  if @word != nil
+    Scrabble::Scrabble.score(@word)
   end
    %> points
 
