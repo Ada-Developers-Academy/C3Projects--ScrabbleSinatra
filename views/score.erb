@@ -3,7 +3,7 @@
 <form action="" method="post" accept-charset="utf-8">
 
   <label for="word"> Scrabble Word </label>
-  <input type="text" name="word" value="" id="word">
+  <input type="text" name="scrabble[word]" value="" id="word">
 
 
 <!-- <label for="address_1">Address 1</label>
@@ -23,7 +23,13 @@
 </form>
 
 <pre>
-<p> Word: <%= @word %>  Score: <%= @score %> </p>
-some text will go here, eventually.maybe.
-<%= params %>
+<p>
+  Word: <%= @word %>
+</p>
+<p>
+  Score: <%= @score %>
+</p>
+<p>
+  <%= params %>
+</p>
 </pre>

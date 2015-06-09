@@ -1,5 +1,6 @@
 require "sinatra"
 require "sinatra/reloader"
+require './lib/scrabble'
 
 class MySite < Sinatra::Base
   register Sinatra::Reloader
@@ -9,19 +10,10 @@ class MySite < Sinatra::Base
   end
 
   post "/" do
-    @word = params[:word]
-    # we eventually want to do this below
-    # @score = params[:scrabble][:score]
+    @word = params[:scrabble][:word]
+    params[:scrabble][:score] = Scrabble::Scrabble.score(@word)
+    @score = params[:scrabble][:score]
     erb :score
   end
 
 end
-
-# params hash
-# {
-#   scrabble: {
-#     word: "word input",
-#     score: "score output"
-#   }
-#
-# }
