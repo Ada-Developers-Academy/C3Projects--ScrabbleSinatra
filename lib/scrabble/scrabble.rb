@@ -52,8 +52,29 @@ module Scrabble
         end
       end
 
-      return word_score # since we're out of letters, you can have your score back.
+      word_score_hash = {
+        word: word,
+        score: word_score
+      }
+
+      return word_score_hash # since we're out of letters, you can have your score back.
     end
 
-  end
-end
+    def self.score_multiple_words(words_array)
+      # we know we can use shift to take the first item and pop it off
+      # we also know we can use sort! to get all the empty strings to the front / left / first positions
+      words_array.sort!
+
+      while words_array[0] == ""
+        words_array.shift
+      end
+
+      scores_array = words_array.map do |word|
+        Scrabble.score(word)
+      end
+
+      return scores_array
+    end
+
+  end # class
+end # module

@@ -1,0 +1,24 @@
+<form action="" method="post" accept-charset="utf-8">
+  <label for="number">How many words do you want to score?</label>
+  <!-- <input id="word" type="text" name="number" placeholder="eg, 99 (NOT ninety-nine)"> -->
+  <select name="number">
+    <% 100.times do |count| %>
+      <%= "<option value='#{ count + 1 }'>#{ count + 1 }</option>" %>
+    <% end %>
+  </select>
+
+  <input type="submit" value="This Many">
+</form>
+
+<% if @no_words %>
+  <form action="" method="post" accept-charset="utf-8">
+    <% @no_words.times do |count| %>
+      <p><label>Word <%= "#{ count + 1 }" %>: <input type="text" name="words[]"></label></p>
+    <% end %>
+    <input type="submit" value="Score Words">
+  </form>
+<% end %>
+
+<pre>
+  <%= @scores || params %>
+</pre>
