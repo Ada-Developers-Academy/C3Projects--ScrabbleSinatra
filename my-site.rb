@@ -8,4 +8,8 @@ class MySite < Sinatra::Base
     erb :home
   end
 
+  get 'score' do
+    erb :score
+  end
+
 end
