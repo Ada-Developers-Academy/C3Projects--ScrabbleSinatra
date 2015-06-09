@@ -1,0 +1,16 @@
+<h1> Score all the werdz </h1>
+
+<form action="" method="post" accept-charset="utf-8">
+  <fieldset>
+    <legend>Words to Score</legend>
+    <p><textarea rows="4" cols="50" placeholder="type,your,words,separated,by,commas,like,this (no spaces)" name="words[]"></textarea></p>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+
+
+<pre>
+ <%= params %>
+</pre>
+
+<%= @words %>

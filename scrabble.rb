@@ -19,13 +19,13 @@ class ScrabbleSite < Sinatra::Base
   end
 
   get "/werdz" do
-
     erb :werdz
   end
   
   post "/werdz" do
-
-    erb :werdz
+    @input = (params[:words])
+    @words = @input[0].split(",")
+  erb :werdz
   end
 
 end

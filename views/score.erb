@@ -12,8 +12,11 @@
 
 <h1>The word '<%= @word %>' has a score of <%= @score %>.</h1>
 
-<h1> <% (0...(@letters.length)).each do |index| %>
+<h3> <% (0...(@letters.length)).each do |index| %>
   <% @letters[index] %>
-  <% @scores[index] %> </h1>
+  <% @scores[index] %> 
   <p><%= @letters[index] + " = " + @scores[index].to_s + " point(s)" %><p>
 <% end %>
+</h3>
+
+<a href="/werdz">Click here to score more than one word!</a>
