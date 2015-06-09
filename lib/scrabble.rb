@@ -10,7 +10,7 @@ module Scrabble
 
 
 		def self.print_pairs(word)
-			sum = 0
+			
 			word = word.upcase
 			breakdown = []
 
@@ -36,40 +36,7 @@ module Scrabble
 
 
 
-			# word = word.split(//).each do |value|
-			# 	letters_hash = {}
-      #   letter_sym = :""
-      #   letter_sym = word.split(//).to_sym
-			# 	letters_hash[:letter_sym] = LETTER_VALUE[value]
-			# 	breakdown<< letters_hash
-			# 	# sum = sum+LETTER_VALUE[value]
-			# end
-			# return sum
 
 
-
-		# def self.highest_score_from(array_of_words)
-		# 	# answer = array_of_words
-		# 	# answer = array_of_words.max_by{|word| score(word)} 	#works but limits effective 														application of conditionals
-		# 	answer = array_of_words.sort_by!{|word| score(word)}
-		# 	#pseudo:
-		# 	# if length of answer is =7
-		# 	# 	use enumerable (drop_by?) to create new array of only 7 letter words
-		# 	# 	if only one value,
-		# 	# 		give as answer
-		# 	# 	elsif
-		# 	# 		give highest score
-		# 	# 	elsif  a tie in score value
-		# 	# 		give first word in array_of_words
-		# 	# 	end
-		# 	# elsif answer length is equal AND score length is equal
-		# 	# 	give first given word
-		# 	# elsif multiple answers with same score
-		# 	# 	give answer with fewest letters
-		# 	# elsif one clear highest score
-		# 		answer =array_of_words.pop
-    #
-		#
-		# end
 	end
 end
