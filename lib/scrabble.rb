@@ -19,7 +19,8 @@ class Scrabble
  	end
 
  	def self.score_letter(letter)
- 		POINTS[letter]
+ 	  return "(No value)" unless VALID_LETTERS.include?(letter)
+   	POINTS[letter]
  	end
 
 	def self.valid_input?(word)
@@ -28,7 +29,7 @@ class Scrabble
 
 	  	word_letters = self.process_input(word)
 	  	return false if word_letters.find { |letter| !VALID_LETTERS.include?(letter) }
-		
+
 	  	true
   	end
 
