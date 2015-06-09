@@ -48,4 +48,3 @@ module Scrabble
     end
   end
 end
-  puts Scrabble::Scrabble.score("word")

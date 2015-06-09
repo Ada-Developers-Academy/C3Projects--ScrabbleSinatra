@@ -1,3 +1,4 @@
+<% require "./lib/result.rb"   %>
 <html>
 <title>What's my word worth?
 </title>
@@ -7,8 +8,19 @@
     <input type="text" name="word" value="" id="word">
     <input type="submit" value="Score my Word">
   </form>
+
+  <img src="/score.png" width = "400" alt= "scrabble score">
+
 <pre>
-  <%= params %>
+  The word <%=params["word"]%> is worth
+
+  <%=
+  if params["word"] != nil
+    Scrabble::Scrabble.score(params["word"])
+  end
+   %> points
+
 </pre>
+
 </body>
 </html>
