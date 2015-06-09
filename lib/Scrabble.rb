@@ -37,12 +37,11 @@ module Scrabble
 
     def self.score(word)
       total_points = 0
-      points_array = []
       word.upcase!
-      input_letters = letter_array(word)
+      input_letters = letter_array(word) # array of letters
       # calling the validating method is_valid?(word)
       is_valid?(input_letters)
-      letter_scoring(input_letters)
+      points_array = letter_scoring(input_letters)
 
       points_array.each do |point_value|
         total_points += point_value
@@ -51,27 +50,40 @@ module Scrabble
       return total_points
     end
 
-    def self.letter_scoring(input_letters)
+    def self.letter_scoring(input_letters) # input_letters is an array of letters
+      #
+      # input_letters.each do |letter|
+      #   LETTERS.each do |points, letters|
+      #     points_array ||= []
+      #     if letters.include?(letter)
+      #       points_array.push(points)
+      #     end
+      #   end
+      # end
+      #
+      # input_letters.each do |letter|
+      #
+      # end
+
+      points_array = []
 
       input_letters.each do |letter|
-        LETTERS.each do |points, letters|
-          if letters.include?(letter)
-            points_array.push(points)
-          end
-        end
+        points_array.push(1) if LETTERS[1].include?(letter)
+        # points_array.push(2) if 2.include?(letter)
+        # points_array.push(2) if 3.include?(letter)
+        # points_array.push(2) if 4.include?(letter)
+        # points += 5 if 5.include?(letter)
+        # points += 8 if 8.include?(letter)
+        # points += 10 if 10.include?(letter)
       end
+
       return points_array
     end
 
     def self.letter_array(word)
       # splitting word into an array of letters
-      word.split(//)
+      return word.split(//)
     end
-
-    # def self.letter_score_array
-    #
-    # end
-
 
     def self.split_words(words)
       # to split textarea words into an array so we can score them individually
@@ -79,7 +91,17 @@ module Scrabble
       return array_of_words
     end
 
+    def multi(string_of_words)
+      array_of_words = split_words(string_of_words)
+      hash_of_words = {}
 
+      # word is key, score of word is value
+      array_of_words.each do |word|
+        hash_of_words[word] = score(word)
+      end
+
+      return hash_of_words
+    end
 
     def self.highest_score_from(array_of_words)
     # return the word with the highest score (with caveats)
