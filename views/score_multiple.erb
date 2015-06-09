@@ -8,20 +8,12 @@
   <input type="submit" value="Submit">
 </form>
 
-
 <% if @scored_words %>
-	<table>
-		<tr>
-			<th>Word</th>
-			<th>Score</th>
-		</tr>
 	<% @scored_words.each do |word, score| %>
-		<tr>
-			<td><%= word %></td>
-			<td><%= score %></td>
-		</tr>
+		<% @word = word %>
+		<% @score = score %>
+		<%= erb :scored_word %>
 	<% end %>
-	</table>
 <% end %>
 
 <!-- Uncomment below for development -->

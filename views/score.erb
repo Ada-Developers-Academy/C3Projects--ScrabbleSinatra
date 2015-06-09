@@ -6,14 +6,7 @@
   <input type="submit" value="Submit">
 </form>
 
-<p>Word is: <%= @word %></p>
-<p>Score is: <%= @score %></p>
-<p>Letter scores:</p>
-<% if @word %>
-	<% @word.split("").each do |letter| %>
-		<p><%= "#{letter}: #{Scrabble.score_letter(letter)}" %></p>
-	<% end %>
-<% end %>
+<%= erb :scored_word %>
 
 <!-- Uncomment below for development -->
 <!-- <pre>
