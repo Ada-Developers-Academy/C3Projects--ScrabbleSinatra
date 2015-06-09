@@ -1,0 +1,38 @@
+<h1>Scrabble Score</h1>
+
+<form action="" method="post" accept-charset="utf-8">
+
+  <label for="word"> Scrabble Word </label>
+  <input type="text" name="scrabble[word]" value="" id="word">
+
+
+<!-- <label for="address_1">Address 1</label>
+<input type="text" name="addy[addy_1]" id="address_1">   -->
+
+
+<!--   <label for="fave-animal">Favorite Animal</label>
+  <input type="text" name="fun[fave-animal]" value="" id="fave-animal">
+
+<!-- <label for="address_1">Address 1</label>
+<input type="text" name="addy[addy_1]" id="address_1">
+
+<label for="address_2">Address 2</label>
+<input type="text" name="addy[addy_2]" id="address_2"> -->
+
+  <input type="submit" value="Score">
+</form>
+
+<pre>
+<p>
+  Word: <%= @word %>
+</p>
+<p>
+  Letter Pairs: <%= @print_pairs %>
+</p>
+<p>
+  Score: <%= @score %>
+</p>
+<p>
+ <!--  <%= params %> -->
+</p>
+</pre>
