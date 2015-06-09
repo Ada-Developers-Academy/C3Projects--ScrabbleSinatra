@@ -6,13 +6,12 @@ class ScrabbleSite < Sinatra::Base
   register Sinatra::Reloader
 
   get "/" do
-    @scored_word = Scrabble::Scrabble.new(params[:word])
     erb :score
   end
 
   post "/" do
-    @scored_word  = params[:word]
-    @score        = params[:score]
+    @word  = params[:word]
+    @score = Scrabble::Scrabble.score(@word)
     erb :score
   end
 
