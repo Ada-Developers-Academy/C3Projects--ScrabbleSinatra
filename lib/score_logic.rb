@@ -1,7 +1,7 @@
 module Scrabble ##require your gems and classes here # require_relative 'scrabble/whatevs'
 
   SCOREBOARD = {
-    "A" => 1, "E" => 1, "I" => 1, "O" => 1, "U" => 1, 
+    "A" => 1, "E" => 1, "I" => 1, "O" => 1, "U" => 1,
     "L" => 1, "N" => 1, "R" => 1, "S" => 1, "T" => 1,
     "D" => 2, "G" => 2,
     "B" => 3, "C" => 3, "M" => 3, "P" => 3,
@@ -12,6 +12,7 @@ module Scrabble ##require your gems and classes here # require_relative 'scrabbl
   }
 
   class Scrabble
+
     def self.score(word)
 
       return "Must pick a letter!" unless word[/[a-zA-Z]+/] == word && word.length > 0
@@ -28,6 +29,7 @@ module Scrabble ##require your gems and classes here # require_relative 'scrabbl
         score_array.push(SCOREBOARD[letter.upcase])
       end
 
+      puts score_array
 
       sum = 0
       # for each letter
