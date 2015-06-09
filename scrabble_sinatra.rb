@@ -16,10 +16,23 @@ class ScrabbleSinatra < Sinatra::Base
   post "/score" do
 
     @word = params[:word][0]
-    @score = Scrabble::Score.score(params[:word][0])
+    @score = Scrabble::Score.score_word(params[:word][0])
     @letter_score = Scrabble::Score.score_word_by_letter(params[:word][0])
 
     erb :score
+  end
+
+  get "/score_multiple" do
+    erb :score_multiple
+  end
+
+  post "/score_multiple" do
+    @array_words = params[:words]
+
+    @scores = Scrabble::Score.score_array_of_words(params[:words])
+    # @letter_score = Scrabble::Score.score_array_by_letters(params[:words])
+
+    erb :score_multiple
   end
 
 end
