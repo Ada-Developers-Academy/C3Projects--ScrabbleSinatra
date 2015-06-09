@@ -12,16 +12,17 @@ class ScrabbleSite < Sinatra::Base
 
   post "/" do
     @word  = params[:word]
-    @score = Scrabble::Scrabble.score(@word)
+    @word_score = Scrabble::Scrabble.score(@word)
     @letters = @word.chars
-    @scores = Scrabble::Scrabble.get_score(@word)
+    @scores = Scrabble::Scrabble.get_score_array(@word)
     erb :score
   end
 
   get "/werdz" do
+    @words = []
     erb :werdz
   end
-  
+
   post "/werdz" do
     @input = (params[:words])
     @words = @input[0].split(",")

@@ -18,7 +18,7 @@ module Scrabble ##require your gems and classes here # require_relative 'scrabbl
       return "Must pick a letter!" unless word[/[a-zA-Z]+/] == word && word.length > 0
       #If the input is a character that isn't a letter, or if it's an empty string, it brings up an error
 
-      get_score(word)
+      get_score_array(word)
 
       sum = 0
       # for each letter
@@ -29,7 +29,7 @@ module Scrabble ##require your gems and classes here # require_relative 'scrabbl
       return sum
     end
 
-    def self.get_score(word)
+    def self.get_score_array(word)
       word = word.chars
       # empty array to iterate through each letter of the split word
       @score_array = []

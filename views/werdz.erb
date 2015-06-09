@@ -13,4 +13,7 @@
  <%= params %>
 </pre>
 
-<%= @words %>
+<% @words.each do |word| %>
+  <% points = Scrabble::Scrabble.score(word) %>
+  <p><%= word %> is <%= points.to_s %> point(s).</p>
+<% end %>
