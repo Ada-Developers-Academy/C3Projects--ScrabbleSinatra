@@ -10,13 +10,14 @@
 
 <h3>Words and Scores</h3>
 <ul>
-  <% @hash_of_words_and_scores.each do |key, value| %>
-  <li>
-    <%=  %>
-  </li>
-  <% end %>
+  	<% @hash_of_words_and_scores.each do |key, value| %>
+		  <li>
+		    <%= key %><%= value %>
+		  </li>
+	<% end %>
 </ul>
 
-<!-- <pre>
+<pre>
 	<%= @hash_of_words_and_scores %>
-</pre> -->
+</pre>
+

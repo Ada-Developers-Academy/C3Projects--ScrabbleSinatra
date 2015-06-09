@@ -46,11 +46,6 @@ module Scrabble
 			return hash_of_words
 		end
 
-		def self.print_scores(hash_of_words)
-			hash_of_words.each do |key, value|
-				puts "#{key}:#{value}"
-			end
-		end
 
   end # Scrabble class
 end # Scrabble module

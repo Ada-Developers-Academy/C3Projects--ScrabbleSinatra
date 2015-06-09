@@ -12,10 +12,12 @@ class MySite < Sinatra::Base
   post "/" do
   	@word = params[:word]
   	@score = Scrabble::Scrabble.score(@word)
+
   	erb :score
   end
 
   get "/multi_score" do
+  	@hash_of_words_and_scores = {}
     erb :multi_score
   end
 
