@@ -1,7 +1,16 @@
 <h1>Score</h1>
 <form action="" method="post" accept-charset="utf-8">
-  <label for="word">Enter your word:</label>
-  <input type="text" name="word" value="" id="word">
+  <fieldset>
+    <label for="word">Enter your word:</label>
+    <input type="text" name="word" value="" id="word">
+  </fieldset>
+
+  <fieldset>
+    <legend>Which word type should win?</legend>
+    <label><input type="radio" name="score_method" value="seven_letters" checked="checked">Seven Letters</label>
+    <label><input type="radio" name="score_method" value="shortest_word">Shortest Word</label>
+  </fieldset>
+
   <input type="submit" value="Submit">
 </form>
 
