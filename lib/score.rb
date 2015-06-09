@@ -1,5 +1,7 @@
 module Scrabble
 
+  require "pry"
+
   class ScoreWord
 
     VALUE = { 
@@ -13,7 +15,15 @@ module Scrabble
           }
 
     def self.score_word(word)
-      check_word
+      word_score = 0
+      word.each_char do |char|
+        VALUE.each do |k, v|
+          if v.include?(char)
+            word_score += k
+          end
+        end
+      end
+      return word_score
     end
 
     def self.check_word
