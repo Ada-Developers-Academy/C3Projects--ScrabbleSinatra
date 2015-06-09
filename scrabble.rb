@@ -2,7 +2,7 @@
   require "sinatra"
   require "sinatra/reloader"
 
-  class Scrabble < Sinatra::Base
+  class ScrabbleSite < Sinatra::Base
     register Sinatra::Reloader
 
     get "/" do
@@ -15,7 +15,7 @@
 
     post "/score" do
       @word = params[:word]
-      @score = params[:score]
+      @score = Scrabble::Scrabble.score(@word)
       erb :score
     end
 

@@ -1,3 +1,3 @@
 require './scrabble'
 
-run Scrabble
+run ScrabbleSite
