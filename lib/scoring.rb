@@ -29,5 +29,28 @@ module Scrabble
 
       return word_score
     end
+
+		def self.create_word_array(user_words)
+			word_array = user_words.split(" ")
+			return word_array
+		end
+
+		def self.score_words(array_of_words)
+			array_of_values = []
+			array_of_words.collect do |word|
+				value = self.score(word)
+				array_of_values.push(value)
+			end
+			# return array_of_values
+			hash_of_words = Hash[array_of_words.zip array_of_values]#return hash_of_words with the words as the keys and their point value as the value
+			return hash_of_words
+		end
+
+		def self.print_scores(hash_of_words)
+			hash_of_words.each do |key, value|
+				puts "#{key}:#{value}"
+			end
+		end
+
   end # Scrabble class
 end # Scrabble module
