@@ -1,5 +1,6 @@
 require "sinatra"
 require "sinatra/reloader"
+require "./lib/Scrabble"
 
 
 class ScrabbleSinatra < Sinatra::Base
@@ -15,7 +16,10 @@ class ScrabbleSinatra < Sinatra::Base
   end
 
   post "/score" do
-    erb #SOMETHING
+    erb :score
+    @word = params[:word]
+    # why do we need the @ sign?
+    # @score = Scrabble::Scrabble.score(@word)
   end
 
 end
