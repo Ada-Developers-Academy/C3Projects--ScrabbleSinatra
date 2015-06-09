@@ -7,10 +7,15 @@
 
 </form>
 
+ <p> <%= "You played #{@word}" %> </p>
+ <p> <%= "Total score is #{@score}" %> </p>
 
-  <%= @letter_score %>
-  <%= @word %>
-  <%= @score %>
+<% if @letter_score %>
+  <% @letter_score.each_pair do |key, value| %>
+   <p> <%= "#{key} is #{value} points" %> </p>
+  <% end %>
+<% end %>
+
 
 <pre>
 <%= params %>

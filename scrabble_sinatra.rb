@@ -17,11 +17,8 @@ class ScrabbleSinatra < Sinatra::Base
 
     @word = params[:word][0]
     @score = Scrabble::Score.score(params[:word][0])
-
     @letter_score = Scrabble::Score.score_word_by_letter(params[:word][0])
-
-
-
+    puts "my instance is #{@letter_score}"
 
     erb :score
   end

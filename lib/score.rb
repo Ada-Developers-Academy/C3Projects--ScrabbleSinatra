@@ -44,18 +44,16 @@ module Scrabble
      end
 
      def self.score_word_by_letter(word)
-      final_hash = { }
+      final_hash = {}
 
       letters = word.upcase.split("")
 
       letters.each do |letter|
         final_hash[letter] = self.score_letter(letter)
       end
-
-      return final_hash
+      @letter_score = final_hash
+      return @letter_score
      end
-
-
 
   end
 end
