@@ -1,0 +1,19 @@
+<!-- <p> Word is: <%= @word %></p>
+<p> Score is: <%= @score %></p> -->
+
+<% if @scored_words %>
+  <table>
+    <tr>
+      <th>Word</th>
+      <th>Score</th>
+    </tr>
+  <% @scored_words.each do |word, score| %>
+    <tr>
+      <td><%= word %></td>
+      <td><%= score %></td>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+  <%= puts "Enter some words."%>
+<% end %>

@@ -18,6 +18,11 @@ class ScrabbleSite < Sinatra::Base
   post '/score' do
     @word = params[:word]
     @score = Scrabble.score(@word)
+    # @words = params[:list_of_words].split(" ")
+    # @scored_words = {}
+    # @words.each do |word|
+    #   @scored_words[word] = Scrabble.score(word)
+    # end
     @title = "Score"
     erb :score
   end
