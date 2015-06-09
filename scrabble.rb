@@ -18,14 +18,14 @@ class ScrabbleSite < Sinatra::Base
     erb :score
   end
 
-  # get "/werdz" do
-  #
-  #   erb :werdz
-  # end
-  #
-  # post "/werdz" do
-  #
-  #   erb :werdz
-  # end
+  get "/werdz" do
+
+    erb :werdz
+  end
+  
+  post "/werdz" do
+
+    erb :werdz
+  end
 
 end

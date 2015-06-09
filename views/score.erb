@@ -12,16 +12,8 @@
 
 <h1>The word '<%= @word %>' has a score of <%= @score %>.</h1>
 
-<%= @letters %>
-<%= @scores %>
-
-<h1> <% @letters.each do |letter| %> <%= letter %> <% end %> </h1>
-
 <h1> <% (0...(@letters.length)).each do |index| %>
   <% @letters[index] %>
-  <% @scores[index] %>
-  <%= @letters[index] + " = " + @scores[index].to_s + " point(s)" %>
-  <%= "\n" %>
+  <% @scores[index] %> </h1>
+  <p><%= @letters[index] + " = " + @scores[index].to_s + " point(s)" %><p>
 <% end %>
-
-</h1>
