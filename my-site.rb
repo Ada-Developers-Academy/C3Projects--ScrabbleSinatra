@@ -13,7 +13,9 @@ class MySite < Sinatra::Base
     erb :score_word
   end
 
-  # * make dummy link index page
-  # * make form on score page for entering word
-  # * make sure that we take input, use rb file to score word, then update page w/ score/result
+  post "/score_word" do
+    @word = params["word"]
+
+    erb :score_word
+  end
 end
