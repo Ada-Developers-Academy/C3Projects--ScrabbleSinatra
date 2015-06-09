@@ -42,6 +42,3 @@ DEPENDENCIES
   sinatra (~> 1.4.6)
   sinatra-contrib (~> 1.4.2)
   thin (~> 1.6.3)
-
-BUNDLED WITH
-   1.10.3

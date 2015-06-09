@@ -7,8 +7,10 @@
 
 <% unless params == {} %>
   <%= params %>
-  <% @final_score %>
+  <% if @final_score.nil? %>
+    <%= erb :error_partial %>
+  <% else %>
+    <h3>Your score is: <%= @final_score %></h3>
+  <% end %>
 <% end %>
-<!-- <pre>
-  <%= params %>
-</pre> -->
+
