@@ -1,0 +1,15 @@
+<!-- May want to hide below later on, so only displays after POST. -->
+<h1>
+  Your point-by-point, letter-by-letter breakdown is as follows!
+</h1>
+<p>
+  Your words are: <%= @words %>. The total score is: <%= @total_score %>.
+</p>
+<p>
+  <% @words_hash.each do |word, arrays| %>
+  <p>Your word is: <%= word %>.
+  And the point breakdown is: <%= arrays %></p>
+  <% end %>
+</p>
+
+<%= @words_hash %>

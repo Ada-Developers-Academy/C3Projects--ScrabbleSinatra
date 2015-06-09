@@ -32,16 +32,17 @@ class ScrabbleSinatra < Sinatra::Base
     @words_hash = {}
     @words = params[:words]
     @word_array = Scrabble::Scrabble.split_words(@words)
-    # @score = Scrabble::Scrabble.score(@words)
+    @total_score = Scrabble::Scrabble.score(@words)
 
     # for each word in the @word_array, get letter and letter scores into individual arrays
     @word_array.each do |word|
+      @score = Scrabble::Scrabble.score(word)
       @letters = Scrabble::Scrabble.letter_array(word)
       @letter_scoring = Scrabble::Scrabble.letter_scoring(@letters)
-      @words_hash[word] = [@letters, @letter_scoring]
+      @words_hash[word] = [@score, @letters, @letter_scoring]
     end
 
-    erb :multi_score
+    erb :multi_score_result
   end
 
 end
