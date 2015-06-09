@@ -26,7 +26,7 @@ module Scrabble
 
 
      # method to return the total score of a word
-     def self.score(word)
+     def self.score_word(word)
        # ensures entire string is uppercase
        word = word.upcase
 
@@ -43,7 +43,9 @@ module Scrabble
        return total_word_score
      end
 
+
      def self.score_word_by_letter(word)
+      # final_array = [["c", 3], ["a", 1], ["t", 1]]
       final_array = [ ]
 
       letters = word.upcase.split("")
@@ -57,6 +59,33 @@ module Scrabble
 
       return final_array
      end
+
+
+     def self.score_array_of_words(array)
+      # final_array = [["candy", 11], ["apple", 9], ["whatever, 17"]]
+      final_array = [ ]
+
+      array.each do |word|
+        inside_array = [ ]
+        inside_array.push(word)
+        inside_array.push(self.score_word(word))
+        final_array.push(inside_array)
+      end
+
+      return final_array
+     end
+
+
+    #  def self.score_array_by_letters(array)
+    #   final_array = [ ]
+    #
+    #   words_with_total_score = self.score_array_of_words(array)
+    #   # = [["candy", 11], ["apple", 9], ["whatever, 17"]]
+    #   words_with_total_score.each do |pair|
+    #     final_array.push(score_word_by_letter(words_with_total_score.first))
+    #   end
+     #
+    #  end
 
     #  binding.pry
 
