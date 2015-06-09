@@ -16,10 +16,10 @@ class ScrabbleSinatra < Sinatra::Base
   end
 
   post "/score" do
-    erb :score
     @word = params[:word]
     # why do we need the @ sign?
-    # @score = Scrabble::Scrabble.score(@word)
+    @score = Scrabble::Scrabble.score(@word)
+    erb :score
   end
 
 end

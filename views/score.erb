@@ -3,13 +3,15 @@
 
 <form method="post" accept-charset="utf-8">
   <label for="word">Word</label>
-  <input type="text" name="word" value="wordher" id="word">
+  <input type="text" name="word" id="word">
 
   <input type="submit">
 
 </form>
 
 <p>
-  Your word is: <%=@word %>
-
+  Your word is: <%= @word %>.
+</p>
+<p>
+  Your score is: <%= @score %>.
 </p>
