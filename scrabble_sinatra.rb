@@ -30,8 +30,7 @@ class ScrabbleSinatra < Sinatra::Base
     @array_words = params[:words]
 
     @scores = Scrabble::Score.score_array_of_words(params[:words])
-    # @letter_score = Scrabble::Score.score_array_by_letters(params[:words])
-
+    @letter_scores = Scrabble::Score.score_letters_in_array(@array_words)
     erb :score_multiple
   end
 

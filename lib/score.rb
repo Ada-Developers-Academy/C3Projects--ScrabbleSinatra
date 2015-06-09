@@ -76,16 +76,14 @@ module Scrabble
      end
 
 
-    #  def self.score_array_by_letters(array)
-    #   final_array = [ ]
-    #
-    #   words_with_total_score = self.score_array_of_words(array)
-    #   # = [["candy", 11], ["apple", 9], ["whatever, 17"]]
-    #   words_with_total_score.each do |pair|
-    #     final_array.push(score_word_by_letter(words_with_total_score.first))
-    #   end
-     #
-    #  end
+   def self.score_letters_in_array(array)
+    final_array = []
+
+    array.each do |word|
+      final_array.push(self.score_word_by_letter(word))
+    end
+    return final_array
+   end
 
     #  binding.pry
 
