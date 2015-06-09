@@ -51,32 +51,18 @@ module Scrabble
     end
 
     def self.letter_scoring(input_letters) # input_letters is an array of letters
-      #
-      # input_letters.each do |letter|
-      #   LETTERS.each do |points, letters|
-      #     points_array ||= []
-      #     if letters.include?(letter)
-      #       points_array.push(points)
-      #     end
-      #   end
-      # end
-      #
-      # input_letters.each do |letter|
-      #
-      # end
-
       points_array = []
 
       input_letters.each do |letter|
         points_array.push(1) if LETTERS[1].include?(letter)
-        # points_array.push(2) if 2.include?(letter)
-        # points_array.push(2) if 3.include?(letter)
-        # points_array.push(2) if 4.include?(letter)
-        # points += 5 if 5.include?(letter)
-        # points += 8 if 8.include?(letter)
-        # points += 10 if 10.include?(letter)
-      end
+        points_array.push(2) if LETTERS[2].include?(letter)
+        points_array.push(3) if LETTERS[3].include?(letter)
+        points_array.push(4) if LETTERS[4].include?(letter)
+        points_array.push(5) if LETTERS[5].include?(letter)
+        points_array.push(8) if LETTERS[8].include?(letter)
+        points_array.push(10) if LETTERS[10].include?(letter)
 
+      end
       return points_array
     end
 
