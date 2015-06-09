@@ -18,6 +18,9 @@ class Scrabble
  		word_letters = word.downcase.split("")
  	end
 
+ 	def self.score_letter(letter)
+ 		POINTS[letter]
+ 	end
 
 	def self.valid_input?(word)
   		# guard clause for empty string or nil input
