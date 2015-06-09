@@ -13,9 +13,14 @@
       erb :score
     end
 
-    def output_score
+    get "/score_words" do
+      erb :score_words
+    end
+
+    def output_score(word)
+      @word = word
       score_line = ""
-      if @word.nil? == false
+      unless @word.nil?
         @score_line = "The word '#{@word}' scores #{@score} points."
       else
         @score_line = score_line
@@ -26,8 +31,20 @@
     post "/score" do
       @word = params[:word]
       @score = Scrabble::Scrabble.score(@word)
-      output_score
+      output_score(@word)
       erb :score
+    end
+
+    post "/score_words" do
+      @words = params[:words].split(",")
+      @score_hash = {}
+      @words.each do |word|
+        @score = Scrabble::Scrabble.score(word)
+        @score_hash[word] = @score
+        # output_score(word)
+      end
+      # @scored_words = Scrabble::Scrabble.highest_score_from(@words)
+      erb :score_words
     end
 
 

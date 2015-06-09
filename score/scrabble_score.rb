@@ -63,17 +63,19 @@ module Scrabble
         score(word)
       end
 
-      # create max_group, the words from the hash item with the max value.
-      max_group = grouped_hash.max[1]
 
-      # if there is a word in the max_group with length of 7, return it
-      if max_group.find { |word| word.length == 7 }
-        return max_group.find { |word| word.length == 7}
 
-      # otherwise, return the shortest word in group.
-      else
-        return max_group.min_by { |word| word.length }
-      end
+      # # create max_group, the words from the hash item with the max value.
+      # max_group = grouped_hash.max[1]
+      #
+      # # if there is a word in the max_group with length of 7, return it
+      # if max_group.find { |word| word.length == 7 }
+      #   return max_group.find { |word| word.length == 7}
+      #
+      # # otherwise, return the shortest word in group.
+      # else
+      #   return max_group.min_by { |word| word.length }
+      # end
 
     end
 
