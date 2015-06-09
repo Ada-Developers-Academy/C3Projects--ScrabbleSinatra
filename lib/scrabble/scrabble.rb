@@ -9,6 +9,21 @@ module ScrabbleSinatra
       q: 10, z: 10
     }
 
+    def self.scoring(word_array, score_method)
+      display_array = []
+      winning_word = highest_score_from(word_array, score_method) if word_array.length > 1
+      word_array.each do |word|
+        letter_hash = score_multiple(word.split(//))
+        letter_hash.each do |letter, score|
+          display_array << "#{letter}: #{score}"
+        end
+        word_score = "#{word}: #{score(word)}"
+        word_score += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This one wins!" if word == winning_word
+        display_array << word_score
+      end
+      return display_array
+    end
+
     # .score(word): returns the total score value for the given word [breakfast]
     def self.score(word) # word is input as a string (case insensitive)
       letters = convert_input(word)

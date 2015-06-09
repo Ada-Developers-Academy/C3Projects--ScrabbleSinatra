@@ -1,13 +1,5 @@
-<% unless @word_array.nil? %>
-  <% winning_word = ScrabbleSinatra::ScrabbleSinatra.highest_score_from(@word_array, @score_method) %>
-<!-- TODO: if word_array.length > 1 -->
-
-  <% @word_array.each do |word| %>
-    <% letter_hash = ScrabbleSinatra::ScrabbleSinatra.score_multiple(word.split(//)) %>
-    <% letter_hash.each do |letter, score| %>
-      <p><%= letter %>: <%= score %></p>
-    <% end %>
-    <p><%= word %>: <%= ScrabbleSinatra::ScrabbleSinatra.score(word) %><%= " This one wins!" if word == winning_word %></p>
+<% unless @display_array.nil? %>
+  <% @display_array.each do |line| %>
+    <p><%= line %></p>
   <% end %>
-
 <% end %>
