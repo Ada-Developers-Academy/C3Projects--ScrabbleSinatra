@@ -1,15 +1,16 @@
+<!--  Form to score a single word -->
+<form action="" method="post" accept-charset="utf-8">
+  <label for="word"> Your Word</label>
+  <input type="text" name="word" value="" id="word">
+  <input type="submit" value="Score my Word">
+</form>
 
-  <form action="" method="post" accept-charset="utf-8">
-    <label for="word"> Your Word</label>
-    <input type="text" name="word" value="" id="word">
-    <input type="submit" value="Score my Word">
-  </form>
 
+<img src="/score.png" width = "400" alt= "scrabble score">
 
-  <img src="/score.png" width = "400" alt= "scrabble score">
-
-  <pre>
-    <% if @word != nil %>
-    The word <%= @word %> is equal to <%= @answer  %> points
-    <% end %>
-  </pre>
+<!-- Display logic -->
+<pre>
+  <% if @word != nil %>
+  The word <%= @word %> is equal to <%= @answer  %> points
+  <% end %>
+</pre>
