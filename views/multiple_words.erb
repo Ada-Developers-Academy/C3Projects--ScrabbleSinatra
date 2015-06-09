@@ -2,7 +2,7 @@
 
 <form action="" method="post" accept-charset="utf-8">
   <label for="words">Words:</label><br>
-  <textarea name="words" rows="10" cols="20" id="words">Enter your words separated by commas.</textarea>
+  <textarea name="words" rows="10" cols="20" id="words" onFocus="this.value=''">Enter your words separated by commas.</textarea>
 
   <input type="submit" value="Score!">
 </form>
@@ -10,4 +10,5 @@
 
 <p>
   <%= @scores %>
+  <%= @all_the_letter_points %>
 </p>

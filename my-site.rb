@@ -16,6 +16,7 @@ class MySite < Sinatra::Base
   post '/one_word' do
     @word = params[:word]
     @score = Scrabble.score(@word)
+    @letter_with_points = Scrabble.letter_values(@word)
     erb :one_word
   end
 
@@ -24,9 +25,10 @@ class MySite < Sinatra::Base
   end
 
   post '/multiple_words' do
-    @words = params[:words]
-    # returns an array of scores
+    @words = params[:words].split(", ")
+    # returns a hash of word-score key-value pairs
     @scores = Scrabble.score_multiple(@words)
+    @all_the_letter_points = Scrabble.all_letter_values(@words)
     erb :multiple_words
   end
 end
