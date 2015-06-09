@@ -1,6 +1,5 @@
 <form action="" method="post" accept-charset="utf-8">
   <label for="number">How many words do you want to score?</label>
-  <!-- <input id="word" type="text" name="number" placeholder="eg, 99 (NOT ninety-nine)"> -->
   <select name="number">
     <% 100.times do |count| %>
       <%= "<option value='#{ count + 1 }'>#{ count + 1 }</option>" %>

@@ -28,7 +28,6 @@ class MySite < Sinatra::Base
     @no_words = params["number"].to_i
 
     if params["words"]
-      # {"words"=>["sadfkjh", ";kjl;kj", " lk;j;lkj", "cjhsg", "893u4t", "", "", "", "", "", ""]}
       words = params["words"]
       @scores = Scrabble::Scrabble.score_multiple_words(words)
     end
