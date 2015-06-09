@@ -19,8 +19,9 @@ class Scrabble
  	end
 
  	def self.score_letter(letter)
- 	  return "(No value)" unless VALID_LETTERS.include?(letter)
-   	POINTS[letter]
+ 		letter = letter.downcase
+ 	  	return "(No value)" unless VALID_LETTERS.include?(letter)
+   		POINTS[letter]
  	end
 
 	def self.valid_input?(word)
