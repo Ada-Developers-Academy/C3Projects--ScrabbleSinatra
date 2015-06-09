@@ -1,4 +1,4 @@
-
+# require 'pry'
 module Scrabble
   class Score
 
@@ -44,16 +44,21 @@ module Scrabble
      end
 
      def self.score_word_by_letter(word)
-      final_hash = {}
+      final_array = [ ]
 
       letters = word.upcase.split("")
 
       letters.each do |letter|
-        final_hash[letter] = self.score_letter(letter)
+        inside_array = [ ]
+        inside_array.push(letter)
+        inside_array.push(self.score_letter(letter))
+        final_array.push(inside_array)
       end
-      @letter_score = final_hash
-      return @letter_score
+
+      return final_array
      end
+
+    #  binding.pry
 
   end
 end
