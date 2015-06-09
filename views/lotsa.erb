@@ -1,0 +1,22 @@
+  <form action="" method="post" accept-charset="utf-8">
+    <label for="morewords"> Your Word</label>
+    <input type="text" name="morewords[]" value="" id="morewords">
+    <label for="morewords"> Your Word</label>
+    <input type="text" name="morewords[]" value="" id="morewords">
+    <label for="morewords"> Your Word</label>
+    <input type="text" name="morewords[]" value="" id="morewords">
+    <input type="submit" value="Score my Word">
+  </form>
+
+
+  <img src="/score.png" width = "400" alt= "scrabble score">
+
+  <pre>
+
+    <% if params[:morewords] != nil %>
+      <% params[:morewords].each do |word| %>
+      Your word <%= word %> is worth <%= Scrabble::Scrabble.score(word) %>
+      <% end %>
+    <% end %>
+
+  </pre>

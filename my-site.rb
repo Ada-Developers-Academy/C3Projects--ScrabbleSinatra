@@ -18,4 +18,16 @@ class MySite < Sinatra::Base
     @answer = Scrabble::Scrabble.score(@word)
     erb :score
   end
+
+  get '/lotsa' do
+    erb :lotsa
+  end
+
+  post '/lotsa' do
+    # @lotsascores = Scrabble::Scrabble.score(word)
+    # @word = params[:word]
+    # @answer = Scrabble::Scrabble.score(@word)
+    erb :lotsa
+  end
+
 end

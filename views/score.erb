@@ -1,8 +1,4 @@
 
-<html>
-<title>What's my word worth?
-</title>
-<body>
   <form action="" method="post" accept-charset="utf-8">
     <label for="word"> Your Word</label>
     <input type="text" name="word" value="" id="word">
@@ -12,11 +8,8 @@
 
   <img src="/score.png" width = "400" alt= "scrabble score">
 
- <pre>
-
+  <pre>
     <% if @word != nil %>
     The word <%= @word %> is equal to <%= @answer  %> points
     <% end %>
- </pre>
-</body>
-</html>
+  </pre>
