@@ -9,13 +9,24 @@ class MySite < Sinatra::Base
     erb :home
   end
 
-  get '/score' do
-    erb :score
+  get '/one_word' do
+    erb :one_word
   end
 
-  post '/score' do
+  post '/one_word' do
     @word = params[:word]
     @score = Scrabble.score(@word)
-    erb :score
+    erb :one_word
+  end
+
+  get '/multiple_words' do
+    erb :multiple_words
+  end
+
+  post '/multiple_words' do
+    @words = params[:words]
+    # returns an array of scores
+    @scores = Scrabble.score_multiple(@words)
+    erb :multiple_words
   end
 end

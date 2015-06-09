@@ -5,10 +5,11 @@ class Scrabble
            "d" => 2, "g" => 2, "b" => 3, "c" => 3, "m" => 3,
            "p" => 3, "f" => 4, "h" => 4, "v" => 4, "w" => 4,
            "y" => 4, "k" => 5, "j" => 8, "x" => 8, "q" =>10,
-           "z" => 10} # can also use "a": 8 instead of hash rockets
+           "z" => 10
+  } # can also use "a": 8 instead of hash rockets
 
-    # can do word.downcase! to mutate the whole word-- may mess with the call --
-    # may be a little less efficient to do downcase for each in line 21
+  # can do word.downcase! to mutate the whole word-- may mess with the call --
+  # may be a little less efficient to do downcase for each in line 21
 
   def self.score(word)
     total_points = 0
@@ -22,13 +23,24 @@ class Scrabble
     # check that the string is between 1 and 7 letters
     raise ArgumentError.new "You must play between 1 and 7 letters" unless word_array.length >= 1 && word_array.length <= 7
 
-      # Finally a valid word! Assigning a point value to each letter in the array
-      word_array.each do |letter|
-        points = SCORE[letter]
-        # adds points for each letter to a total_points variable
-        total_points += points
-        # should be able to just do total_points += SCORE[letter]
-      end
-      return total_points
+    # Finally a valid word! Assigning a point value to each letter in the array
+    word_array.each do |letter|
+      points = SCORE[letter]
+      # adds points for each letter to a total_points variable
+      total_points += points
+      # should be able to just do total_points += SCORE[letter]
+    end
+
+    return total_points
+  end
+
+  def self.score_multiple(words)
+    words = words.split(", ")
+    scores = {}
+    words.each do |word|
+      scores[word] = score(word)
+    end
+
+    return scores
   end
 end
