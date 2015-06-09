@@ -12,10 +12,17 @@ module Scrabble
 		def self.score(word)
 			sum = 0
 			word = word.upcase
+			breakdown = []
+
 			word = word.split(//).each do |value|
-				sum = sum+LETTER_VALUE[value]
+				letters_hash = {}
+				letters_hash[:(word.split(//))] = LETTER_VALUE[value]
+				breakdown<< letters_hash
+				# sum = sum+LETTER_VALUE[value]
 			end
-			return sum
+			# return sum
+
+			return breakdown
 		end
 
 		# def self.highest_score_from(array_of_words)
