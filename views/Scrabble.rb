@@ -37,27 +37,49 @@ module Scrabble
 
     def self.score(word)
       total_points = 0
+      points_array = []
       word.upcase!
-      # splitting word into an array of letters
-      input_letters = word.split(//)
-
+      input_letters = letter_array(word)
       # calling the validating method is_valid?(word)
       is_valid?(input_letters)
+      letter_scoring(input_letters)
 
-      # for each letter in the input_letters array, iterate over it
-      input_letters.each do |letter|
-        LETTERS.each do |points, letters|
-          # for each key/value in LETTERS constant, iterate over this
-          # if the input_letters letter matches the LETTERS letters in the value,
-          # then add the points key to total_points
-          if letters.include?(letter)
-            total_points += points
-          end
-        end
+      points_array.each do |point_value|
+        total_points += point_value
       end
 
       return total_points
     end
+
+    def self.letter_scoring(input_letters)
+
+      input_letters.each do |letter|
+        LETTERS.each do |points, letters|
+          if letters.include?(letter)
+            points_array.push(points)
+          end
+        end
+      end
+      return points_array
+    end
+
+    def self.letter_array(word)
+      # splitting word into an array of letters
+      word.split(//)
+    end
+
+    # def self.letter_score_array
+    #
+    # end
+
+
+    def self.split_words(words)
+      # to split textarea words into an array so we can score them individually
+      array_of_words = words.split(" ")
+      return array_of_words
+    end
+
+
 
     def self.highest_score_from(array_of_words)
     # return the word with the highest score (with caveats)
@@ -72,27 +94,27 @@ module Scrabble
         scrabble_hash[word] = score
       end
 
-      # Find the highest score from the scrabble_hash
-      hi_score = scrabble_hash.max_by {|word, score| score} # returns hi_score array
-
-      scrabble_hash.each do |word, score|
-        if score == hi_score[1]
-        # when the score = hi_score, push word into the array
-          hi_score_array.push(word)
-        end
-      end
-
-      hi_score_array.each do |word|
-      # if the length of the word is 7, it's the winner!
-        if word.length == 7
-          return word
-        end
-      end
-
-      # the winner is the max score with the least amount of letters
-      winner_word =  hi_score_array.min_by {|word| word.length}
-      return winner_word
-
+      # # Find the highest score from the scrabble_hash
+      # hi_score = scrabble_hash.max_by {|word, score| score} # returns hi_score array
+      #
+      # scrabble_hash.each do |word, score|
+      #   if score == hi_score[1]
+      #   # when the score = hi_score, push word into the array
+      #     hi_score_array.push(word)
+      #   end
+      # end
+      #
+      # hi_score_array.each do |word|
+      # # if the length of the word is 7, it's the winner!
+      #   if word.length == 7
+      #     return word
+      #   end
+      # end
+      #
+      # # the winner is the max score with the least amount of letters
+      # winner_word =  hi_score_array.min_by {|word| word.length}
+      # return winner_word
+      return scrabble_hash
     end
 
   end

@@ -28,6 +28,7 @@ class ScrabbleSinatra < Sinatra::Base
 
   post "/multi_score" do
     @words = params[:words]
+    @word_array = Scrabble::Scrabble.split_words(@words)
     @score = Scrabble::Scrabble.score(@words)
     erb :multi_score
   end
