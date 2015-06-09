@@ -13,10 +13,11 @@
 
   <pre>
 
-    <% if params[:morewords] != nil %>
-      <% params[:morewords].each do |word| %>
-      Your word <%= word %> is worth <%= Scrabble::Scrabble.score(word) %>
+    <% if @wordarray != nil %>
+      <% (0..2).each do |index|%>
+      The word "<%= @wordarray[index] %>" is equal to <%= @manyscores[index] %> points.
       <% end %>
-    <% end %>
+    <%  end %>
+
 
   </pre>

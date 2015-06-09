@@ -24,9 +24,12 @@ class MySite < Sinatra::Base
   end
 
   post '/lotsa' do
-    # @lotsascores = Scrabble::Scrabble.score(word)
-    # @word = params[:word]
-    # @answer = Scrabble::Scrabble.score(@word)
+    @wordarray = params[:morewords]
+    @manyscores = []
+    @wordarray.each do |word|
+      @manyscores.push (Scrabble::Scrabble.score(word))
+    end
+
     erb :lotsa
   end
 
