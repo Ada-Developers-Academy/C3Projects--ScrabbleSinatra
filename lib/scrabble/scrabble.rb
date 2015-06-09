@@ -22,20 +22,20 @@ module Scrabble
         end
       end
     end
-    
+
 
     def self.score(word)
-      # first: raise some noise about nil values
-      if word == nil
-        return "WORDS SHOULD NOT BE NOTHING!"
+      # converts numbers to strings, so they'll get kicked out .each_char loop below. (lines 46-53)
+      word = word.to_s
+
+      # words must have at least one letter!
+      if word.length == 0
+        return "Please enter a word before hitting the Score Word button."
       end
 
-      # first: format word
-      word = word.to_s # handling for numbers (fixednum, floats)
-
       # handling anything too long or short to be a legal word
-      if (word.length > 7) || (word.length == 0)
-        return "INVALID WORD!"
+      if word.length > 7
+        return "Please enter a word that has 7 letters or fewer."
       end
 
       # if a word gets this far, it should be a word!
@@ -48,7 +48,7 @@ module Scrabble
           word_score += score_letter(char) # and then add to it as letters appear.
         # handling for letters outside legal a-z range.
         else
-          return "THERE IS SOME ILLEGAL CHARACTER IN YOUR WORD!"
+          return "Please only put letters in your word."
         end
       end
 
