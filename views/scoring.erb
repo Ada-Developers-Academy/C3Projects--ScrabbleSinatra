@@ -1,5 +1,5 @@
 <% unless @word_array.nil? %>
-  <% winning_word = ScrabbleSinatra::ScrabbleSinatra.highest_score_from(@word_array) %>
+  <% winning_word = ScrabbleSinatra::ScrabbleSinatra.highest_score_from(@word_array, @score_method) %>
 <!-- TODO: if word_array.length > 1 -->
 
   <% @word_array.each do |word| %>

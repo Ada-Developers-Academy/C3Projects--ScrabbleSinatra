@@ -52,7 +52,7 @@ module ScrabbleSinatra
     end
 
     # .highest_score_from(array_of_words): returns the word in the array with the highest score [breakfast]
-    def self.highest_score_from(array_of_words)
+    def self.highest_score_from(array_of_words, score_method = "seven")
       score_check = array_of_words.group_by { |word| score(word) }
       top_words = score_check[score_check.keys.max] # returns an array of word(s) that have the max score
 
@@ -60,33 +60,31 @@ module ScrabbleSinatra
       if top_words.length == 1
         top_words[0]
       else # handle ties
-        handle_ties(array_of_words, top_words)
+        handle_ties(array_of_words, top_words, score_method)
       end
     end
 
     # chooses winning word if there's a tie for highest-scoring
-    def self.handle_ties(original_words, top_words)
+    def self.handle_ties(original_words, top_words, score_method)
       grouped_ties = top_words.group_by { |words| words.length }
+      if score_method == "seven" # TODO: Clean this up later??
+        if grouped_ties[7] != nil # does >= 1 word have 7 characters?
+          tied_7_char_words = grouped_ties[7]
 
-      # [breakfast]: Note that there is a greater bonus for using all seven letters. If the top score is tied between multiple words and one used all seven letters, choose the one with seven letters over the one with fewer tiles.
-      if grouped_ties[7] != nil # does >= 1 word have 7 characters?
-        tied_7_char_words = grouped_ties[7]
-
-        if tied_7_char_words.length == 1 # if true, there's only one 7-character word
-          tied_7_char_words[0]
-        else # there's a tie
-          find_first_in_original(original_words, tied_7_char_words)
+          if tied_7_char_words.length == 1 # if true, there's only one 7-character word
+            return tied_7_char_words[0]
+          else # there's a tie
+            return find_first_in_original(original_words, tied_7_char_words)
+          end
         end
+      end
 
-      # [breakfast]: Note that it’s better to use fewer tiles, so if the top score is tied between multiple words, pick the one with the fewest letters.
-      else
-        shortest_tied_words = grouped_ties[ grouped_ties.keys.min ]
+      shortest_tied_words = grouped_ties[ grouped_ties.keys.min ]
 
-        if shortest_tied_words.length == 1 # if true, there is only one shortest word
-          shortest_tied_words[0]
-        else # there are ties for shortest word with highest score
-          find_first_in_original(original_words, shortest_tied_words)
-        end
+      if shortest_tied_words.length == 1 # if true, there is only one shortest word
+        shortest_tied_words[0]
+      else # there are ties for shortest word with highest score
+        find_first_in_original(original_words, shortest_tied_words)
       end
     end
 

@@ -11,6 +11,7 @@ class MySite <Sinatra::Base
 
   post "/" do
     @word_array = [params[:word]]
+    @score_method = params[:score_method]
     erb :score
   end
 
@@ -20,7 +21,7 @@ class MySite <Sinatra::Base
 
   post "/more_words" do
     @word_array = params[:words].split(" ")
-
+    @score_method = params[:score_method]
     erb :more_words
   end
 
