@@ -1,15 +1,16 @@
 <h1>Score!</h1>
-<h2> Below is the form for scoring.</h2>
+<h2>Type words separated by spaces.</h2>
 
 <form method="post" accept-charset="utf-8">
   <!-- UTF-8 accepts all characters, but Scrabble.rb only accepts letters. -->
-  <label for="word">Word</label>
-  <input type="text" name="word" id="word">
+  <label for="words">Words</label>
+  <textarea name="words" id="words"></textarea>
 
   <input type="submit">
 
 </form>
 
+<!-- May want to hide below later on, so only displays after POST. -->
 <p>
   Your word is: <%= @word %>.
 </p>

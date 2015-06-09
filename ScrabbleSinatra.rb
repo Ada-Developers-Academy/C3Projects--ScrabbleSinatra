@@ -8,7 +8,6 @@ class ScrabbleSinatra < Sinatra::Base
 
   get "/" do
     erb :home
-
   end
 
   get "/score" do
@@ -17,9 +16,20 @@ class ScrabbleSinatra < Sinatra::Base
 
   post "/score" do
     @word = params[:word]
-    # why do we need the @ sign?
+    # Using instance variable because refering to @word on score.erb.
+    # If local variable, score.erb is outside the scope.
     @score = Scrabble::Scrabble.score(@word)
     erb :score
+  end
+
+  get "/multi_score" do
+    erb :multi_score
+  end
+
+  post "/multi_score" do
+    @words = params[:words]
+    @score = Scrabble::Scrabble.score(@words)
+    erb :multi_score
   end
 
 end
