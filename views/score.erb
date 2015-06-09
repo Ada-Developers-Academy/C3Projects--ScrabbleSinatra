@@ -1,12 +1,9 @@
 <h1> Score that word </h1>
 
 <form action="" method="post" accept-charset="utf-8">
-
-    <label for="word">Word</label>
-
-    <input type="text" name="word" value="" id="word">
-
-    <input type="submit" value="Submit">
+  <label for="word">Word</label>
+  <input type="text" name="word" value="" id="word">
+  <input type="submit" value="Submit">
 </form>
 
 <h1>Your word is <%= @word %>! You received <%= Scrabble::Scrabble.score(@word) %> points.
