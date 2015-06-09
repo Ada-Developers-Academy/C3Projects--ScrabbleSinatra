@@ -6,7 +6,7 @@ module Scrabble
 			return "" if letter_value == 0
 		end
 
-		LETTER_VALUE = {"A"=>1, "E"=>1, "I"=>1, "O"=>1, "U"=>1, "L"=>1, "N"=>1, "R"=>1, "S"=>1, "T"=>1, "D"=>2, "G"=>2, "B"=>3,"C"=>3, "M"=>3, "P"=>3, "F"=>4, "H"=>4, "V"=>4, "W"=>4,  "Y"=>4,"K"=>5, "J"=>8, "X"=>8, "Q"=>10, "Z"=>10}
+		LETTER_VALUE = {"A"=>1, "E"=>1, "I"=>1, "O"=>1, "U"=>1, "L"=>1, "N"=>1, "R"=>1, "S"=>1, "T"=>1, "D"=>2, "G"=>2, "B"=>3, "C"=>3, "M"=>3, "P"=>3, "F"=>4, "H"=>4, "V"=>4, "W"=>4,  "Y"=>4,"K"=>5, "J"=>8, "X"=>8, "Q"=>10, "Z"=>10}
 
 
 		def self.score(word)
@@ -14,16 +14,28 @@ module Scrabble
 			word = word.upcase
 			breakdown = []
 
-			word = word.split(//).each do |value|
-				letters_hash = {}
-				letters_hash[:(word.split(//))] = LETTER_VALUE[value]
-				breakdown<< letters_hash
-				# sum = sum+LETTER_VALUE[value]
-			end
+      word.split(//).each do |letter|
+        pair_hash = {}
+        value = LETTER_VALUE[letter] # get value for letter
+        pair_hash[letter] = value # push letter value pair into hash
+        breakdown << pair_hash # push hash pairs into array collection
+      end
+
+      return breakdown
+    end
+
+
+			# word = word.split(//).each do |value|
+			# 	letters_hash = {}
+      #   letter_sym = :""
+      #   letter_sym = word.split(//).to_sym
+			# 	letters_hash[:letter_sym] = LETTER_VALUE[value]
+			# 	breakdown<< letters_hash
+			# 	# sum = sum+LETTER_VALUE[value]
+			# end
 			# return sum
 
-			return breakdown
-		end
+
 
 		# def self.highest_score_from(array_of_words)
 		# 	# answer = array_of_words
