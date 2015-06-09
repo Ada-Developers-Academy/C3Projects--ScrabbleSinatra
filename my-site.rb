@@ -37,10 +37,5 @@ class MySite < Sinatra::Base
   end
 
 
-
-  # create letter by letter breakdown
-  #    rewrite the current scoring method to return array
-
-  # then worry about partials b/c it says DRY
   # strip spaces?
 end
