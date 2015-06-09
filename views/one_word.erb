@@ -8,7 +8,4 @@
 </form>
 
 
-<p>
-  Letters are worth points: <%= @letter_with_points %>
-  Your word <%= @word %> is worth <%= @score %> points.
-</p>
+<%= erb :word_result if !@word.nil?  %>

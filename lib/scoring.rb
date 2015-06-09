@@ -1,9 +1,4 @@
 class Scrabble
-  # attr_reader :letter_with_points
-  #
-  # def initialize
-  # @letter_with_points = {}
-  # end
   # SCORE is constant within the class-- tiles always have the same value
   SCORE = {"a" => 1, "e" => 1, "i" => 1, "o" => 1, "u" => 1,
            "l" => 1, "n" => 1, "r" => 1, "s" => 1, "t" => 1,

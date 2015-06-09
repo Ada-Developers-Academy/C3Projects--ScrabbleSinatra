@@ -7,8 +7,4 @@
   <input type="submit" value="Score!">
 </form>
 
-
-<p>
-  <%= @scores %>
-  <%= @all_the_letter_points %>
-</p>
+<%= erb :words_result if !@words.nil?  %>
