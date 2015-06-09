@@ -12,4 +12,7 @@
 
 <h1>The word '<%= @word %>' has a score of <%= @score %>.</h1>
 
-<h1> <% @letters.each do |letter| %> <%=  letter %> <% end  %> </h1>
+<%= @letters %>
+<%= @scores %>
+
+<h1> <% @letters.each do |letter| %> <%= letter %> <% end %> </h1>

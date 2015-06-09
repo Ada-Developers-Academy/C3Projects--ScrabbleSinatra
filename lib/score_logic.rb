@@ -13,31 +13,31 @@ module Scrabble ##require your gems and classes here # require_relative 'scrabbl
 
   class Scrabble
 
-    def self.score(word)
+   def self.score(word)
 
       return "Must pick a letter!" unless word[/[a-zA-Z]+/] == word && word.length > 0
       #If the input is a character that isn't a letter, or if it's an empty string, it brings up an error
 
-      # split word letters into an array
-      word = word.split(//)
-
-      # empty array to iterate through each letter of the split word
-      score_array = []
-
-      #SCOREBOARD[letter.upcase] gives me the score value from my SCOREBOARD hash
-      word.each do |letter|
-        score_array.push(SCOREBOARD[letter.upcase])
-      end
-
-      puts score_array
-
+      get_score(word)
+      
       sum = 0
       # for each letter
-      score_array.each do |score|
+      @score_array.each do |score|
         sum += score.to_i #adds all the letter scores together
       end
       #returns the sum/score of all letters
       return sum
+    end
+
+    def self.get_score(word)
+      word = word.chars
+      # empty array to iterate through each letter of the split word
+      @score_array = []
+      #SCOREBOARD[letter.upcase] gives me the score value from my SCOREBOARD hash
+      word.each do |letter|
+        @score_array.push(SCOREBOARD[letter.upcase])
+      end
+      return @score_array
     end
 
     def self.highest_score_from(array_of_words)

@@ -13,7 +13,8 @@ class ScrabbleSite < Sinatra::Base
   post "/" do
     @word  = params[:word]
     @score = Scrabble::Scrabble.score(@word)
-    @letters  = @word.chars
+    @letters = @word.chars
+    @scores = Scrabble::Scrabble.get_score(@word)
     erb :score
   end
 
