@@ -2,7 +2,6 @@ require "sinatra"
 require "sinatra/reloader"
 require "./lib/Scrabble"
 
-
 class ScrabbleSinatra < Sinatra::Base
   register Sinatra::Reloader
 
