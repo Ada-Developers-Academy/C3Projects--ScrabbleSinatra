@@ -7,4 +7,4 @@ module Scrabble
 	end
 
 
-end #end Scoring module
+end # Scoring module
