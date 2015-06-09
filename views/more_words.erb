@@ -5,8 +5,4 @@
   <input type="submit" value="Submit">
 </form>
 
-<% unless @words_scores.nil? %>
-  <% @words_scores.each do |word, score| %>
-    <p><%= word %>: <%= score %></p>
-  <% end %>
-<% end %>
+<%= erb :scoring %>

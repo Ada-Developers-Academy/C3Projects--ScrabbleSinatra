@@ -5,6 +5,4 @@
   <input type="submit" value="Submit">
 </form>
 
-<% unless @word.nil? %>
-  <p> Score for <%= @word %>: <%= @score %></p>
-<% end %>
+<%= erb :scoring %>

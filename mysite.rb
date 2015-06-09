@@ -10,9 +10,7 @@ class MySite <Sinatra::Base
   end
 
   post "/" do
-    @word = params[:word]
-    @score = ScrabbleSinatra::ScrabbleSinatra.score(@word)
-
+    @word_array = [params[:word]]
     erb :score
   end
 
@@ -21,9 +19,7 @@ class MySite <Sinatra::Base
   end
 
   post "/more_words" do
-    @words = params[:words].split(" ")
-    # @words needs to be an array
-    @words_scores = ScrabbleSinatra::ScrabbleSinatra.score_multiple( @words )
+    @word_array = params[:words].split(" ")
 
     erb :more_words
   end

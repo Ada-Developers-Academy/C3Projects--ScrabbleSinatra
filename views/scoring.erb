@@ -1,0 +1,9 @@
+<% unless @word_array.nil? %>
+  <% @word_array.each do |word| %>
+    <% letter_hash = ScrabbleSinatra::ScrabbleSinatra.score_multiple(word.split(//)) %>
+    <% letter_hash.each do |letter, score| %>
+      <p><%= letter %>: <%= score %></p>
+    <% end %>
+    <p><%= word %>: <%= ScrabbleSinatra::ScrabbleSinatra.score(word) %></p>
+  <% end %>
+<% end %>
