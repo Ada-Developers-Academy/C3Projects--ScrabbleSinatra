@@ -35,6 +35,7 @@ class ScrabbleSinatra < Sinatra::Base
     @total_score = Scrabble::Scrabble.score(@words)
 
     # for each word in the @word_array, get letter and letter scores into individual arrays
+    # is below display logic? Or should this be in a .rb file?
     @word_array.each do |word|
       @score = Scrabble::Scrabble.score(word)
       @letters = Scrabble::Scrabble.letter_array(word)

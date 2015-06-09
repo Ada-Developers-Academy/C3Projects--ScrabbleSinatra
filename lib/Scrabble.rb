@@ -89,42 +89,6 @@ module Scrabble
       return hash_of_words
     end
 
-    def self.highest_score_from(array_of_words)
-    # return the word with the highest score (with caveats)
-      scrabble_hash = {}
-      hi_score_array = []
-
-      array_of_words.each do |word|
-        score = 0
-        # calling self.score to score the words from array
-        score = score(word)
-        # scrabble_hash will be key = word, value = score
-        scrabble_hash[word] = score
-      end
-
-      # # Find the highest score from the scrabble_hash
-      # hi_score = scrabble_hash.max_by {|word, score| score} # returns hi_score array
-      #
-      # scrabble_hash.each do |word, score|
-      #   if score == hi_score[1]
-      #   # when the score = hi_score, push word into the array
-      #     hi_score_array.push(word)
-      #   end
-      # end
-      #
-      # hi_score_array.each do |word|
-      # # if the length of the word is 7, it's the winner!
-      #   if word.length == 7
-      #     return word
-      #   end
-      # end
-      #
-      # # the winner is the max score with the least amount of letters
-      # winner_word =  hi_score_array.min_by {|word| word.length}
-      # return winner_word
-      return scrabble_hash
-    end
-
   end
 
 end

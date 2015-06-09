@@ -8,8 +8,12 @@
 <p>
   <% @words_hash.each do |word, arrays| %>
   <p>Your word is: <%= word %>.
-  And the point breakdown is: <%= arrays %></p>
+  The score is <%= arrays[0] %>, the letters:
+  <%= arrays[1] %> and the individual points:
+  <%= arrays[2] %>.
   <% end %>
 </p>
 
 <%= @words_hash %>
+
+<p> <a href="/">Home</a> </p>
