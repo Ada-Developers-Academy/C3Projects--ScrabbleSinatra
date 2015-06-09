@@ -1,0 +1,31 @@
+<h2>To score multiple words, enter words separated by a space, and click submit.</h2>
+
+<form action="" method="post" accept-charset="utf-8">
+
+  <label for="list_of_words">Word</label>
+  <input type="text" name="list_of_words" id="list_of_words">
+
+  <input type="submit" value="Submit">
+</form>
+
+<% if @scored_words %>
+	<table>
+		<tr>
+			<th>Word</th>
+			<th>Score</th>
+		</tr>
+	<% @scored_words.each do |word, score| %>
+		<tr>
+			<td><%= word %></td>
+			<td><%= score %></td>
+		</tr>
+	<% end %>
+	</table>
+<% else %>
+	<%= puts "Enter some words."%>
+<% end %>
+
+<!-- Uncomment below for development -->
+<!-- <pre>
+	<%= params %>
+</pre> -->

@@ -16,7 +16,6 @@ class ScrabbleSite < Sinatra::Base
   end
 
   post '/score' do
-  	# call on scrabble.rb file here
     @word = params[:word]
     @score = Scrabble.score(@word)
     @title = "Score"
@@ -28,12 +27,14 @@ class ScrabbleSite < Sinatra::Base
     erb :score_multiple
   end
 
-  # post '/score' do
-  #   # call on scrabble.rb file here
-  #   @word = params[:word]
-  #   @score = Scrabble.score(@word)
-  #   @title = "Score"
-  #   erb :score
-  # end
+  post '/score_multiple' do
+    @title = "Score multiple words"
+    @words = params[:list_of_words].split(" ")
+    @scored_words = {}
+    @words.each do |word|
+      @scored_words[word] = Scrabble.score(word)
+    end
+    erb :score_multiple
+  end
 
 end
