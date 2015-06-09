@@ -17,17 +17,14 @@ module Scrabble ##require your gems and classes here # require_relative 'scrabbl
       return "Must pick a letter!" unless word[/[a-zA-Z]+/] == word && word.length > 0
       #If the input is a character that isn't a letter, or if it's an empty string, it brings up an error
 
+      # split word letters into an array
       word = word.split(//)
 
       # empty array to iterate through each letter of the split word
       score_array = []
 
-      #assign split word array to a variable
-      split_letter_array = letters_in_word(word)
-
-      #for each letter in the array of individual letters, I pushed the matching letters from SCOREBOARD to score_array
       #SCOREBOARD[letter.upcase] gives me the score value from my SCOREBOARD hash
-      split_letter_array.each do |letter|
+      word.each do |letter|
         score_array.push(SCOREBOARD[letter.upcase])
       end
 
