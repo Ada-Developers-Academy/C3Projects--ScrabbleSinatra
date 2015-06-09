@@ -1,3 +1,4 @@
+
 module Scrabble
   class Score
 
@@ -41,6 +42,20 @@ module Scrabble
 
        return total_word_score
      end
+
+     def self.score_word_by_letter(word)
+      final_hash = { }
+
+      letters = word.upcase.split("")
+
+      letters.each do |letter|
+        final_hash[letter] = self.score_letter(letter)
+      end
+
+      return final_hash
+     end
+
+
 
   end
 end
