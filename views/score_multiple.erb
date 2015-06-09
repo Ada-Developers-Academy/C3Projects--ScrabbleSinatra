@@ -9,11 +9,18 @@
 </form>
 
 <% if @scored_words %>
+	<table>
+		<tr>
+			<th>Word</th>
+			<th>Score</th>
+			<th>Letter scores</th>
+		</tr>
 	<% @scored_words.each do |word, score| %>
 		<% @word = word %>
 		<% @score = score %>
 		<%= erb :scored_word %>
 	<% end %>
+	</table>
 <% end %>
 
 <!-- Uncomment below for development -->

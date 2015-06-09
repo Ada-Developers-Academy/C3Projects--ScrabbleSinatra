@@ -36,5 +36,4 @@ class ScrabbleSite < Sinatra::Base
     end
     erb :score_multiple
   end
-
 end

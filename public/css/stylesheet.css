@@ -8,3 +8,9 @@ body {
   background: url("/images/background.png") no-repeat center;
   background-size: cover;
 }
+
+table, th, td {
+	border:	1px solid black;
+	text-align: left;
+	padding: 5px;
+}

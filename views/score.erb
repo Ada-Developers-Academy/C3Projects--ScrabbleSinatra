@@ -6,7 +6,14 @@
   <input type="submit" value="Submit">
 </form>
 
-<%= erb :scored_word %>
+<table>
+	<tr>
+		<th>Word</th>
+		<th>Score</th>
+		<th>Letter scores</th>
+	</tr>
+	<%= erb :scored_word %>
+</table>
 
 <!-- Uncomment below for development -->
 <!-- <pre>
