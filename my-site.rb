@@ -1,5 +1,6 @@
 require "sinatra"
 require "sinatra/reloader"
+require "./lib/result.rb"
 
 class MySite < Sinatra::Base
   register Sinatra::Reloader
@@ -8,8 +9,12 @@ class MySite < Sinatra::Base
     erb :home
   end
 
-  get 'score' do
+  get '/score' do
     erb :score
   end
 
+  post '/score' do
+    @word = params[:word]
+    erb :score
+  end
 end
