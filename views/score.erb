@@ -7,12 +7,13 @@
 
 </form>
 
- <p> <%= "You played #{@word}" %> </p>
- <p> <%= "Total score is #{@score}" %> </p>
 
 <% if @letter_score %>
-  <% @letter_score.each_pair do |key, value| %>
-   <p> <%= "#{key} is #{value} points" %> </p>
+  <p> <%= "You played #{@word}" %> </p>
+  <p> <%= "Total score is #{@score}" %> </p>
+
+  <% @letter_score.each do |pair| %>
+    <p> <%= "#{pair.first} is #{pair.last} points" %> </p>
   <% end %>
 <% end %>
 
