@@ -6,10 +6,14 @@ class MySite < Sinatra::Base
   register Sinatra::Reloader
 
   get "/" do
-    erb :score
+    erb :home
   end
 
-  post "/" do
+  get"/score" do
+    erb :score 
+  end 
+
+  post "/score" do
     @word = params[:scrabble][:word]
     params[:scrabble][:score] = Scrabble::Scrabble.score(@word)
     @score = params[:scrabble][:score]
