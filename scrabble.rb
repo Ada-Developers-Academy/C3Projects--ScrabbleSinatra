@@ -36,13 +36,8 @@
     end
 
     post "/score_words" do
-      @words = params[:words].split(",")
-      @score_hash = {}
-      @words.each do |word|
-        @score = Scrabble::Scrabble.score(word)
-        @score_hash[word] = @score
-        # output_score(word)
-      end
+      @words = params[:words]
+      @scores = Scrabble::Scrabble.score_words(@words)
       # @scored_words = Scrabble::Scrabble.highest_score_from(@words)
       erb :score_words
     end

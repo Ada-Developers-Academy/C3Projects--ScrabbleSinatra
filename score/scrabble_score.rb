@@ -56,33 +56,20 @@ module Scrabble
       end
     end
 
-    def self.highest(array_of_words)
-
-      # score words and group by score value.
-      grouped_hash = array_of_words.group_by do |word|
-        score(word)
+    def self.scorer(words)
+      @score_hash = {}
+      @words.each do |word|
+        @score = score(word)
+        @score_hash[word] = @score
       end
-
-
-
-      # # create max_group, the words from the hash item with the max value.
-      # max_group = grouped_hash.max[1]
-      #
-      # # if there is a word in the max_group with length of 7, return it
-      # if max_group.find { |word| word.length == 7 }
-      #   return max_group.find { |word| word.length == 7}
-      #
-      # # otherwise, return the shortest word in group.
-      # else
-      #   return max_group.min_by { |word| word.length }
-      # end
-
+      return @score_hash
     end
 
-    def self.highest_score_from(array_of_words)
-      if array_of_words.all? { |word| self.valid_input?(word)}
+    def self.score_words(words)
+      @words = words.split(",")
+      if @words.all? { |word| self.valid_input?(word)}
         # if self.valid_input?(word) == true
-        self.highest(array_of_words)
+        self.scorer(@words)
       else
         WORD_ERROR
       end
