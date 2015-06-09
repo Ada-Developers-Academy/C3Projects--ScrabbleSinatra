@@ -1,0 +1,7 @@
+<% if @word_score[:score].class == Fixnum %>
+  <% output = "#{ @word_score[:word].capitalize } is worth #{ @word_score[:score] } points." %>
+<% else %>
+  <% output = "#{ @word_score[:word].capitalize } is not a valid word. #{ @word_score[:score] }" %>
+<% end %>
+
+<%= output %>

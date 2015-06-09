@@ -19,6 +19,10 @@
   </form>
 <% end %>
 
-<pre>
-  <%= @scores || params %>
-</pre>
+<% if @scores %>
+  <% @scores.each do |word_score| %>
+    <% @word_score = word_score %>
+    <p><%= erb :display_word %></p>
+  <% end %>
+<% end %>
+

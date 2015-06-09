@@ -28,14 +28,21 @@ module Scrabble
       # converts numbers to strings, so they'll get kicked out .each_char loop below. (lines 46-53)
       word = word.to_s
 
+      word_score_hash = {
+        word: word,
+        letters: []
+      }
+
       # words must have at least one letter!
       if word.length == 0
-        return "Please enter a word before hitting the Score Word button."
+        word_score_hash[:score] = "Please enter a word before hitting the Score Word button."
+        return word_score_hash
       end
 
       # handling anything too long or short to be a legal word
       if word.length > 7
-        return "Please enter a word that has 7 letters or fewer."
+        word_score_hash[:score] = "Please enter a word that has 7 letters or fewer."
+        return word_score_hash
       end
 
       # if a word gets this far, it should be a word!
@@ -45,18 +52,21 @@ module Scrabble
 
       word.each_char do |char|
         if (char >= "a") && (char <= "z")
-          word_score += score_letter(char) # and then add to it as letters appear.
+          letter_score = score_letter(char)
+          word_score_hash[:letters].push({
+            letter: char,
+            score: letter_score
+          })
+
+          word_score += letter_score # and then add to it as letters appear.
         # handling for letters outside legal a-z range.
         else
-          return "Please only put letters in your word."
+          word_score_hash[:score] = "Please only put letters in your word."
+          return word_score_hash
         end
       end
 
-      word_score_hash = {
-        word: word,
-        score: word_score
-      }
-
+      word_score_hash[:score] = word_score
       return word_score_hash # since we're out of letters, you can have your score back.
     end
 

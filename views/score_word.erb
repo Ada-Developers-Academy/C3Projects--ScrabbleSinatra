@@ -4,6 +4,6 @@
   <input type="submit" value="Score Word">
 </form>
 
-<% if @output %>
-  <p><%= @output %></p>
+<% if @word_score %>
+  <p><%= erb :display_word %></p>
 <% end %>

@@ -15,12 +15,7 @@ class MySite < Sinatra::Base
 
   post "/score_word" do
     word = params["word"]
-    word_score = Scrabble::Scrabble.score(word)
-    if word_score.class == Hash
-      @output = "#{ word_score[:word].capitalize } is worth #{ word_score[:score] } points."
-    else
-      @output = word_score
-    end
+    @word_score = Scrabble::Scrabble.score(word)
 
     erb :score_word
   end
@@ -28,10 +23,6 @@ class MySite < Sinatra::Base
   get "/score_multiple_words" do
     erb :score_multiple_words
   end
-
-  # post "/score_how_many_words" do
-  #   erb :score_multiple_words
-  # end
 
   post "/score_multiple_words" do
     @no_words = params["number"].to_i
@@ -45,12 +36,11 @@ class MySite < Sinatra::Base
     erb :score_multiple_words
   end
 
-  # create view for multiple words
-  # create page
-  # create route
+
 
   # create letter by letter breakdown
   #    rewrite the current scoring method to return array
 
   # then worry about partials b/c it says DRY
+  # strip spaces?
 end
