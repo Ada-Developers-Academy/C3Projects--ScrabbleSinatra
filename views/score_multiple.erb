@@ -1,8 +1,11 @@
+<a href="/">Home</a>
+<a href="/score">Score a single word</a>
+
 <h2>To score multiple words, enter words separated by a space, and click submit.</h2>
 
 <form action="" method="post" accept-charset="utf-8">
 
-  <label for="list_of_words">Words: </label>
+  <label for="list_of_words">Words:</label>
   <input type="text" name="list_of_words" id="list_of_words">
 
   <input type="submit" value="Submit">
@@ -10,11 +13,7 @@
 
 <% if @scored_words %>
 	<table>
-		<tr>
-			<th>Word</th>
-			<th>Score</th>
-			<th>Letter scores</th>
-		</tr>
+		<%= erb :table_header %>
 	<% @scored_words.each do |word, score| %>
 		<% @word = word %>
 		<% @score = score %>
@@ -22,8 +21,3 @@
 	<% end %>
 	</table>
 <% end %>
-
-<!-- Uncomment below for development -->
-<!-- <pre>
-	<%= params %>
-</pre> -->
