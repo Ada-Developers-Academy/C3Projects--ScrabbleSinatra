@@ -4,6 +4,19 @@ module Scrabble
 
   class Scrabble
 
+    def self.score_of_each_letter(word)
+      score_by_letter = []
+      word.each_char do |letter|
+        VALUES.each do |key, value|
+          if letter == key
+            score_by_letter.push(value)
+          end
+        end
+      end
+
+      return score_by_letter #an array
+    end
+
     def self.score(word)
       word = word.downcase
 
@@ -18,17 +31,12 @@ module Scrabble
         end
       end
 
-      word_score = 0
-      word.each_char do |letter|
-        VALUES.each do |key, value|
-          if letter == key
-            word_score += value
-          end
-        end
-      end
+      score_by_letter = score_of_each_letter(word)
 
+      word_score = score_by_letter.reduce(0, :+)
       return word_score
     end
+
 
 		def self.create_word_array(user_words)
 			word_array = user_words.split(" ")

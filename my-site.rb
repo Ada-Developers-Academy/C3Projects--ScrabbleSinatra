@@ -26,7 +26,6 @@ class MySite < Sinatra::Base
     @word_array = Scrabble::Scrabble.create_word_array(@words)
 
     @hash_of_words_and_scores = Scrabble::Scrabble.score_words(@word_array)
-
   	erb :multi_score
   end
 
