@@ -1,9 +1,17 @@
 <form action="" method="post" accept-charset="utf-8">
   
   <label for="word">Word</label>
+  <!-- <input type="text" name="word" id="word"> -->
   <input type="text" name="word" id="word">
 
   <input type="submit" value="Submit">
-
-  <%=  %>
 </form>
+
+<p> Word is: <%= @word %></p>
+<p> Score is: <%= @score %></p>
+
+<!-- Uncomment below for development -->
+<!-- <pre>
+	<%= params %>
+</pre>
+ -->

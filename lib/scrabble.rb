@@ -1,3 +1,4 @@
+# make a module
 class Scrabble
 
  	POINTS = {
@@ -10,8 +11,8 @@ class Scrabble
 
   	VALID_LETTERS = POINTS.keys.reduce(:+)
 
-  	# def initialize
-  	# end
+  	def initialize
+  	end
 
  	def self.process_input(word)
  		word_letters = word.downcase.split("")

@@ -1,2 +1,2 @@
-require './my-site'
-run MySite
+require './scrabble-site'
+run ScrabbleSite
