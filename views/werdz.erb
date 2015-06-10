@@ -1,6 +1,9 @@
 <h1> Score all the werdz </h1>
 
 <h3>Enter your scrabble words below to get the scores for all of your words and each of their letters.</h3>
+<p>Enter your words separated by a comma with no spaces
+For example, if your words are 'hi', 'hello', and 'bye'
+enter in hi,hello,bye in the textbox below and then click 'Submit'.</p>
 
 <form action="" method="post" accept-charset="utf-8">
   <fieldset>
@@ -11,17 +14,9 @@
 </form>
 
 
-<pre>
- <%= params %>
-</pre>
-
-<h3>
 <% @words.each do |word| %>
   <% points = Scrabble::Scrabble.score(word) %>
-  <p><%= word %> is <%= points.to_s %> point(s).</p>
-<% end %>
-
-<% @words.each do |word| %>
+  <h3>The word '<%= word %>'' is <%= points.to_s %> point(s).</h3>
   <% @letters = word.chars %>
   <% letter_scores = Scrabble::Scrabble.get_score_array(word) %>
   <% (0...(@letters.length)).each do |index| %>
@@ -31,4 +26,4 @@
   <% end %>
 <% end %>
 
-</h3>
+<a href="/">Go back to score an individual word</a>
