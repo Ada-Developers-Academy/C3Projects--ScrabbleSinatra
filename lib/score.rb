@@ -17,16 +17,19 @@ module Scrabble
       if check_word(word).nil?
         return nil
       end
-
       word_score = 0
       word.each_char do |char|
-        VALUE.each do |k, v|
-          if v.include?(char)
-            word_score += k
-          end
-        end
+        word_score += score_letter(char)
       end
       return word_score
+    end
+
+    def self.score_letter(char)
+      VALUE.each do |k, v|
+        if v.include?(char)
+          return k
+        end
+      end
     end
 
     def self.check_word(word)

@@ -5,7 +5,6 @@
 </form>
 
 <% unless params == {} %>
-  <%= params %>
   <% if @final_words_score.nil? %>
     <%= erb :error_partial %>
   <% else %>
