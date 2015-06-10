@@ -16,8 +16,10 @@ class MySite < Sinatra::Base
   post '/score' do
     @word = params[:word]
     @answer = Scrabble::Scrabble.score(@word)
+    @letters = Scrabble::Scrabble.score_letters(@word)
     erb :score
   end
+
 
   get '/lotsa' do
     erb :lotsa
@@ -29,7 +31,6 @@ class MySite < Sinatra::Base
     @wordarray.each do |word|
       @manyscores.push (Scrabble::Scrabble.score(word))
     end
-
     erb :lotsa
   end
 
