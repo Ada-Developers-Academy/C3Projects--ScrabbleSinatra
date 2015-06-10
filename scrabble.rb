@@ -38,7 +38,6 @@
     post "/score_words" do
       @words = params[:words]
       @scores = Scrabble::Scrabble.score_words(@words)
-      # @scored_words = Scrabble::Scrabble.highest_score_from(@words)
       erb :score_words
     end
 

@@ -1,11 +1,18 @@
 <h1> Score Many Scrabble Words Here </h1>
+<h4>Please enter your words separated with commas.</h4>
 <form action="" method="post" accept-charset="utf-8">
   <label for="words">Words:</label>
   <input type="textarea" name="words" value ="" id="words">
   <input type="submit" value="Submit">
 </form>
+
 <h2>Score Breakdown</h2>
 <ul>
-  
+  <% unless @scores.nil? %>
+    <% @scores.each do |word, score| %>
+      <li>
+        Word: "<%= word %>", Score: <%= score %>
+      </li>
+    <% end %>
+  <% end %>
 </ul>
-<h2><%= @scores %> </h2>

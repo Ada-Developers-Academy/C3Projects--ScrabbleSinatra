@@ -67,6 +67,7 @@ module Scrabble
 
     def self.score_words(words)
       @words = words.split(",")
+      @words = @words.map { |word| word.strip }
       if @words.all? { |word| self.valid_input?(word)}
         # if self.valid_input?(word) == true
         self.scorer(@words)
