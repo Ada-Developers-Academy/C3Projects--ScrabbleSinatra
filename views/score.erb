@@ -6,9 +6,11 @@
 </form>
 
 <% unless params == {} %>
-  <%= params %>
-  <% @final_score %>
+  <% if @final_score.nil? %>
+    <%= erb :error_partial %>
+  <% else %>
+    <h3>Word: <%= params[:word] %>, Score: <%= @final_score %></h3>
+    <%= erb :letter_value_partial, :locals => { :k => params[:word]} %>
+  <% end %>
 <% end %>
-<!-- <pre>
-  <%= params %>
-</pre> -->
+

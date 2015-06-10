@@ -12,20 +12,23 @@ module Scrabble
           }
 
     def self.score_word(word)
+      word.downcase!
       if check_word(word).nil?
-        puts "Please enter a word that's 7 characters or less and with only letters."
         return nil
       end
-
       word_score = 0
       word.each_char do |char|
-        VALUE.each do |k, v|
-          if v.include?(char)
-            word_score += k
-          end
-        end
+        word_score += score_letter(char)
       end
       return word_score
+    end
+
+    def self.score_letter(char)
+      VALUE.each do |k, v|
+        if v.include?(char)
+          return k
+        end
+      end
     end
 
     def self.check_word(word)
@@ -37,6 +40,7 @@ module Scrabble
     end
 
     def self.check_char(word)
+      
       word.each_char do |char|
         unless ("a".."z").include?(char)
           return nil

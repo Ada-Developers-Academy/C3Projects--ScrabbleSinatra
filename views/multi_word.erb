@@ -1,0 +1,13 @@
+<h3>Please enter word separated by a comma and a space. Like this ", " but without the quotes.</h3>
+<form action="" method="post" accept-charset="utf-8">
+  <label for="words">Words to score</label>
+  <input type="text" name="words" value="" id="words">
+</form>
+
+<% unless params == {} %>
+  <% if @final_words_score.nil? %>
+    <%= erb :error_partial %>
+  <% else %>
+    <%= erb :multi_word_partial %>
+  <% end %>
+<% end %>
