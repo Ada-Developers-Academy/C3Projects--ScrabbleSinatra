@@ -6,9 +6,24 @@
     <title>Scrabble Score</title>
   </head>
   <body>
-    <p>
-    <a href="/">Home</a>
-    </p>
-    <%= yield %>
+
+    <header>
+      <nav>
+        <img src="/images/downton-scrabble.jpg" alt="characters from downton abbey playing 'scrabble'" width="256" height="144" />
+        <a href="/">Home</a>
+        <a href="/score_word" title="Score a Word!">Score a Word!</a>
+        <a href="/score_multiple_words" title="Score Multiple Words!">Score Multiple Words!</a>
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <nav class="center">
+        <img src="/images/whatever-scrabble.jpg" alt="some scrabble tiles in the background and a tray holding 'whatever'" width="200" height="134" />
+      </nav>
+    </footer>
   </body>
 </html>
