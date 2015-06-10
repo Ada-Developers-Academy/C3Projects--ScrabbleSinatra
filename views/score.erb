@@ -1,16 +1,18 @@
 <h1>This is the score page.</h1>
 
+
 <form action="" method="post" accept-charset="utf-8">
-  <label for="word">Word to score</label>
-  <input type="text" name="word" value="" id="word">
+  <fieldset>
+    <legend>Word to score</legend>
+    <label><input type="text" name="word" value="" id="word"></label>
+  </fieldset>
 </form>
 
 <% unless params == {} %>
   <% if @final_score.nil? %>
     <%= erb :error_partial %>
   <% else %>
-    <h3>Word: <%= params[:word] %>, Score: <%= @final_score %></h3>
+    <h2>Word: <%= params[:word] %>, Score: <%= @final_score %></h2>
     <%= erb :letter_value_partial, :locals => { :k => params[:word]} %>
   <% end %>
 <% end %>
-

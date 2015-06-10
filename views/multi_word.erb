@@ -1,7 +1,9 @@
 <h3>Please enter word separated by a comma and a space. Like this ", " but without the quotes.</h3>
 <form action="" method="post" accept-charset="utf-8">
-  <label for="words">Words to score</label>
-  <input type="text" name="words" value="" id="words">
+  <fieldset>
+    <legend>Words to score</legend>
+    <label><input type="text" name="words" value="" id="words"></label>
+  </fieldset>
 </form>
 
 <% unless params == {} %>
