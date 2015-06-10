@@ -1,6 +1,7 @@
 module Scrabble
   class Scrabble
 
+    # This is Michelle's Scrabble project code. Whooo!
     #each letter has a corresponding point value
     CONVERSIONS = {
       "A" => 1,

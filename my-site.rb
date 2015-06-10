@@ -25,6 +25,7 @@ class MySite < Sinatra::Base
     erb :lotsa
   end
 
+# All of the logic happens here so we can call upon results
   post '/lotsa' do
     @wordarray = params[:morewords]
     @manyscores = []
