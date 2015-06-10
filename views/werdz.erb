@@ -1,5 +1,7 @@
 <h1> Score all the werdz </h1>
 
+<h3>Enter your scrabble words below to get the scores for all of your words and each of their letters.</h3>
+
 <form action="" method="post" accept-charset="utf-8">
   <fieldset>
     <legend>Words to Score</legend>
@@ -13,7 +15,20 @@
  <%= params %>
 </pre>
 
+<h3>
 <% @words.each do |word| %>
   <% points = Scrabble::Scrabble.score(word) %>
   <p><%= word %> is <%= points.to_s %> point(s).</p>
 <% end %>
+
+<% @words.each do |word| %>
+  <% @letters = word.chars %>
+  <% letter_scores = Scrabble::Scrabble.get_score_array(word) %>
+  <% (0...(@letters.length)).each do |index| %>
+    <% @letters[index] %>
+    <% letter_scores[index] %>
+    <p><%= @letters[index] + " = " + letter_scores[index].to_s + " point(s)."%></p>
+  <% end %>
+<% end %>
+
+</h3>
