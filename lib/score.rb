@@ -1,5 +1,4 @@
 module Scrabble
-
   class ScoreWord
 
     VALUE = {
