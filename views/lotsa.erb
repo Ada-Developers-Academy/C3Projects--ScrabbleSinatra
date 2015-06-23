@@ -1,0 +1,22 @@
+<!-- This form collects three words and stores them in the morewords array -->
+<form action="" method="post" accept-charset="utf-8">
+  <label for="morewords"> Word One</label>
+  <input type="text" name="morewords[]" value="" id="morewords">
+  <label for="morewords"> Word Two</label>
+  <input type="text" name="morewords[]" value="" id="morewords">
+  <label for="morewords"> Word Three</label>
+  <input type="text" name="morewords[]" value="" id="morewords">
+  <input type="submit" value="Score My Words">
+</form>
+
+<!-- Fancy stylin' -->
+<img src="/score.png" width = "400" alt= "scrabble score">
+
+<!-- Display logic -->
+<pre>
+  <% if @wordarray != nil %>
+    <% (0..2).each do |index|%>
+    The word "<%= @wordarray[index] %>" is equal to <%= @manyscores[index] %> points.
+    <% end %>
+  <%  end %>
+</pre>
