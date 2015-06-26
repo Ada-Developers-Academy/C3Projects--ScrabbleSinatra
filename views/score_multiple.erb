@@ -1,0 +1,26 @@
+<h1>This is the score multiple words page</h1>
+<form action="" method="post" accept-charset="utf-8">
+  <label for="words[]">Word: </label>
+  <input type="text" name="words[]" value="" id="words[]">
+
+  <label for="words[]">Word: </label>
+  <input type="text" name="words[]" value="" id="words[]">
+
+  <label for="words[]">Word: </label>
+  <input type="text" name="words[]" value="" id="words[]">
+
+  <input type="submit" value="Submit">
+</form>
+
+
+<% if @scores %>
+  <% @scores.each do |pair| %>
+    <h3> <%= "#{pair.first} is #{pair.last} points" %> </h3 >
+  <% end %>
+
+  <% @letter_scores.each do |word| %>
+    <% word.each do |pairs| %>
+   <p> <%= "#{pairs.first} is #{pairs.last} points" %> </p>
+    <% end %>
+  <% end %>
+<% end %>

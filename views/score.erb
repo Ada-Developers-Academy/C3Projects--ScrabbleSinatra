@@ -1,0 +1,18 @@
+<h1>This is the score page</h1>
+<form action="" method="post" accept-charset="utf-8">
+  <label for="word[]">Word: </label>
+  <input type="text" name="word[]" value="" id="word">
+
+  <input type="submit" value="Submit">
+
+</form>
+
+
+<% if @letter_score %>
+  <p> <%= "You played #{@word}" %> </p>
+  <p> <%= "Total score is #{@score}" %> </p>
+
+  <% @letter_score.each do |pair| %>
+    <p> <%= "#{pair.first} is #{pair.last} points" %> </p>
+  <% end %>
+<% end %>
