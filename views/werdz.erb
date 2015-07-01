@@ -15,14 +15,12 @@ enter in hi,hello,bye in the textbox below and then click 'Submit'.</p>
 
 
 <% @words.each do |word| %>
-  <% points = Scrabble::Scrabble.score(word) %>
-  <h3>The word '<%= word %>'' is <%= points.to_s %> point(s).</h3>
+  <h3>The word '<%= word %>'' is <%= @points.to_s %> point(s).</h3>
   <% @letters = word.chars %>
-  <% letter_scores = Scrabble::Scrabble.get_score_array(word) %>
   <% (0...(@letters.length)).each do |index| %>
     <% @letters[index] %>
-    <% letter_scores[index] %>
-    <p><%= @letters[index] + " = " + letter_scores[index].to_s + " point(s)."%></p>
+    <% @letter_scores[index] %>
+    <p><%= @letters[index] + " = " + @letter_scores[index].to_s + " point(s)."%></p>
   <% end %>
 <% end %>
 

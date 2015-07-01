@@ -11,8 +11,6 @@
 <h3>The word '<%= @word %>' has a score of <%= @word_score %>.</h3>
 
 <% (0...(@letters.length)).each do |index| %>
-  <% @letters[index] %>
-  <% @scores[index] %>
   <p><%= @letters[index] + " = " + @scores[index].to_s + " point(s)." %><p>
 <% end %>
 
