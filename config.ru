@@ -1,0 +1,2 @@
+require './scrabble'
+run ScrabbleSite 

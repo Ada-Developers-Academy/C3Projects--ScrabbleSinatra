@@ -1,0 +1,27 @@
+<h1> Score all the werdz </h1>
+
+<h3>Enter your scrabble words below to get the scores for all of your words and each of their letters.</h3>
+<p>Enter your words separated by a comma with no spaces
+For example, if your words are 'hi', 'hello', and 'bye'
+enter in hi,hello,bye in the textbox below and then click 'Submit'.</p>
+
+<form action="" method="post" accept-charset="utf-8">
+  <fieldset>
+    <legend>Words to Score</legend>
+    <p><textarea rows="4" cols="50" placeholder="type,your,words,separated,by,commas,like,this (no spaces)" name="words[]"></textarea></p>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+
+
+<% @words.each do |word| %>
+  <h3>The word '<%= word %>'' is <%= @points.to_s %> point(s).</h3>
+  <% @letters = word.chars %>
+  <% (0...(@letters.length)).each do |index| %>
+    <% @letters[index] %>
+    <% @letter_scores[index] %>
+    <p><%= @letters[index] + " = " + @letter_scores[index].to_s + " point(s)."%></p>
+  <% end %>
+<% end %>
+
+<a href="/">Go back to score an individual word</a>

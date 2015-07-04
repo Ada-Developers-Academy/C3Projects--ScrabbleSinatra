@@ -1,0 +1,17 @@
+<h1> Score that Word </h1>
+
+<h3>Enter your scrabble word below to get the score for that word and each of its letters.</h3>
+
+<form action="" method="post" accept-charset="utf-8">
+  <label for="word">Word</label>
+  <input type="text" name="word" value="" id="word">
+  <input type="submit" value="Submit">
+</form>
+
+<h3>The word '<%= @word %>' has a score of <%= @word_score %>.</h3>
+
+<% (0...(@letters.length)).each do |index| %>
+  <p><%= @letters[index] + " = " + @scores[index].to_s + " point(s)." %><p>
+<% end %>
+
+<a href="/werdz">Click here to score more than one word!</a>
