@@ -1,0 +1,21 @@
+body {
+  font-family: "Arial Black", Gadget, Helvetica, sans-serif;
+}
+
+form legend {
+  font-size: .8em;
+}
+
+.win_type {
+  font-size: .8em;
+}
+
+fieldset {
+  border: none;
+  margin: 1em 0px;
+  padding: 0px;
+}
+
+h1 {
+  text-align: center;
+}

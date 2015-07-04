@@ -1,0 +1,2 @@
+require './mysite'
+run MySite

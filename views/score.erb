@@ -1,0 +1,19 @@
+<main>
+  <h1>Score Words</h1>
+  <!-- creates text box to enter words and radio selections -->
+  <form action="" method="post" accept-charset="utf-8">
+    <label for="words">Enter your words:</label>
+    <textarea name="words" value="" id="words"></textarea>
+
+    <fieldset>
+      <legend>Which word type should win?</legend>
+      <label class="win_type" ><input type="radio" name="score_method" value="seven" checked="checked">Seven Letters</label>
+      <label class="win_type" ><input type="radio" name="score_method" value="shortest">Shortest Word</label>
+    </fieldset>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <!-- displays scores -->
+  <%= erb :scoring, :locals => { :display => display } %>
+</main>
