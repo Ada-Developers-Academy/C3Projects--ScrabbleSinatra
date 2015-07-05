@@ -10,8 +10,7 @@ class Scrabble
   # can do word.downcase! to mutate the whole word-- may mess with the call --
   # may be a little less efficient to do downcase for each in line 21
 
-  def self.score(word)
-    total_points = 0
+  def self.is_valid?(word)
     # check to see that the input is actually a string (not nil or a number)
     raise ArgumentError.new "You can only use strings" unless word.class == String
 
@@ -21,10 +20,13 @@ class Scrabble
 
     # check that the string is between 1 and 7 letters
     raise ArgumentError.new "You must play between 1 and 7 letters" unless word_array.length >= 1 && word_array.length <= 7
+  end
 
-    # Finally a valid word! Assigning a point value to each letter in the array
-    # thank you for `reduce` Jeremy!
-    return word.each_char.reduce(0) { |total, letter| total + SCORE[letter] }
+  def self.score(word)
+    if Scrabble.is_valid?(word)
+      # thank you for `reduce` Jeremy!
+      return word.each_char.reduce(0) { |total, letter| total + SCORE[letter] }
+    end
   end
 
   def self.letter_values(word)
