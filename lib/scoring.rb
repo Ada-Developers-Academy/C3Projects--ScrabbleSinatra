@@ -5,10 +5,7 @@ class Scrabble
            "d" => 2, "g" => 2, "b" => 3, "c" => 3, "m" => 3,
            "p" => 3, "f" => 4, "h" => 4, "v" => 4, "w" => 4,
            "y" => 4, "k" => 5, "j" => 8, "x" => 8, "q" =>10,
-           "z" => 10} # can also use "a": 8 instead of hash rockets
-
-  # can do word.downcase! to mutate the whole word-- may mess with the call --
-  # may be a little less efficient to do downcase for each in line 21
+           "z" => 10}
 
   def self.is_valid?(word)
     # check to see that the input is actually a string (not nil or a number)
@@ -32,13 +29,12 @@ class Scrabble
   def self.letter_values(word)
     letters_hash = {}
     word.downcase.split("").each do |letter|
-    letters_hash[letter]=SCORE[letter]
+      letters_hash[letter]=SCORE[letter]
     end
     return letters_hash
   end
 
   def self.score_multiple(words)
-    # words = words.split(", ")
     scores = {}
     words.each do |word|
       scores[word] = score(word)
@@ -49,7 +45,7 @@ class Scrabble
   def self.all_letter_values(words)
     all_letters_array = []
     words.each do |word|
-    all_letters_array.push(letter_values(word))
+      all_letters_array.push(letter_values(word))
     end
     return all_letters_array
   end
