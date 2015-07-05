@@ -1,0 +1,18 @@
+<h1>Scrabble Cheating</h1>
+<h3>Enter the words you would like to have scored below.</h3>
+
+<form action="" method="post" accept-charset="utf-8">
+	<label for="words">Words</label>
+	<input type="text" name="words" value="" id="words">
+
+	<input type="submit" values="Calculate">
+</form>
+
+<h3>Words and Scores</h3>
+<ul>
+	<% @hash_of_words_and_scores.each do |key, value| %>
+		<li>
+			<%= "#{key} : #{value}" %>
+		</li>
+<% end %>
+</ul>
