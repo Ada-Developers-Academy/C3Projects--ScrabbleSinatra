@@ -11,7 +11,7 @@ class MySite < Sinatra::Base
 
   post "/" do
   	@word = params[:word]
-  	@score = Scrabble::Scrabble.score(@word)
+  	@score = Scrabble::Scoring.score(@word)
 
   	erb :score
   end
@@ -23,9 +23,9 @@ class MySite < Sinatra::Base
 
   post "/multi_score" do
     @words = params[:words]
-    @word_array = Scrabble::Scrabble.create_word_array(@words)
+    @word_array = Scrabble::Scoring.create_word_array(@words)
 
-    @hash_of_words_and_scores = Scrabble::Scrabble.score_words(@word_array)
+    @hash_of_words_and_scores = Scrabble::Scoring.score_words(@word_array)
   	erb :multi_score
   end
 

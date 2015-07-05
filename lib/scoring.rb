@@ -2,20 +2,7 @@ module Scrabble
 
   VALUES = {"a"=> 1, "b"=> 3, "c"=> 3, "d"=> 2, "e"=> 1, "f"=> 4, "g"=> 2, "h"=> 4, "i"=> 1, "j"=> 8, "k"=> 5, "l"=> 1, "m"=> 3, "n"=> 1, "o"=> 1, "p"=> 3, "q"=> 10, "r"=> 1, "s"=> 1, "t"=> 1, "u"=> 1, "v"=> 4, "w"=> 4, "x"=> 8, "y"=> 4, "z"=> 10}
 
-  class Scrabble
-
-    def self.score_of_each_letter(word)
-      score_by_letter = []
-      word.each_char do |letter|
-        VALUES.each do |key, value|
-          if letter == key
-            score_by_letter.push(value)
-          end
-        end
-      end
-
-      return score_by_letter #an array
-    end
+  class Scoring
 
     def self.score(word)
       word = word.downcase
@@ -37,7 +24,6 @@ module Scrabble
       return word_score
     end
 
-
 		def self.create_word_array(user_words)
 			word_array = user_words.split(" ")
 			return word_array
@@ -54,6 +40,19 @@ module Scrabble
 			return hash_of_words
 		end
 
+    private
 
-  end # Scrabble class
+    def self.score_of_each_letter(word)
+      score_by_letter = []
+      word.each_char do |letter|
+        VALUES.each do |key, value|
+          if letter == key
+            score_by_letter.push(value)
+          end
+        end
+      end
+
+      return score_by_letter #an array
+    end
+  end # Scoring class
 end # Scrabble module
