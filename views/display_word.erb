@@ -1,0 +1,13 @@
+<% if @word_score[:score].class == Fixnum %>
+  <%= "#{ @word_score[:word].capitalize } is worth #{ @word_score[:score] } points." %>
+  <ul><% @word_score[:letters].each do |letter| %>
+    <% @letter = letter %>
+    <%= erb :display_letter %>
+  <% end %>
+  </ul>
+
+<% else %>
+  <%= "#{ @word_score[:word].capitalize } is not a valid word. #{ @word_score[:error] }" %>
+<% end %>
+
+

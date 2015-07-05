@@ -1,0 +1,57 @@
+nav a:link, nav a:visited {
+  color: #fff;
+  display: inline-block;
+  font-family: "Arial Bold", sans-serif;
+  font-size: 30px;
+  padding: 0px 20px;
+  text-decoration: none;
+}
+
+body {
+  background: #ccc;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+
+nav {
+  background: #000;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+header nav {
+  height: 144px;
+}
+
+header img {
+  float: left;
+}
+
+.center {
+  margin: auto;
+  text-align: center;
+}
+
+footer nav {
+  background: url(/images/whatever-scrabble.jpg);
+  bottom: 0;
+  height: 134px;
+}
+
+footer img {
+  margin: auto;
+}
+
+header {
+  margin: 0px;
+  padding: 0px;
+}
+
+main {
+  background: #fff;
+  margin: auto;
+  padding: 10px;
+  width: 700px;
+}

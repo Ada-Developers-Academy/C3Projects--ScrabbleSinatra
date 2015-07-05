@@ -1,0 +1,9 @@
+<form action="" method="post" accept-charset="utf-8">
+  <label for="word">Enter word here:</label>
+  <input id="word" type="text" name="word" placeholder="quarter">
+  <input type="submit" value="Score Word">
+</form>
+
+<% if @word_score %>
+  <p><%= erb :display_word %></p>
+<% end %>
