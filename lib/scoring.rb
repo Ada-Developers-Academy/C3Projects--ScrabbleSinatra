@@ -23,11 +23,8 @@ class Scrabble
     raise ArgumentError.new "You must play between 1 and 7 letters" unless word_array.length >= 1 && word_array.length <= 7
 
     # Finally a valid word! Assigning a point value to each letter in the array
-    word_array.each do |letter|
-      total_points += SCORE[letter]
-      # should be able to just do total_points += SCORE[letter]
-    end
-    return total_points
+    # thank you for `reduce` Jeremy!
+    return word.each_char.reduce(0) { |total, letter| total + SCORE[letter] }
   end
 
   def self.letter_values(word)
