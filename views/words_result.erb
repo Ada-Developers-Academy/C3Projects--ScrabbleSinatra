@@ -1,0 +1,9 @@
+<% counter = 0 %>
+<% while counter < @words.length %>
+  <% word = @words[counter] %>
+  <%= "Word: #{word}" %><br>
+  <%= @all_the_letter_points[counter] %><br>
+  <%="Word score: #{@scores[word]}" %>
+  <% counter += 1 %>
+  <br><br>
+<% end %>

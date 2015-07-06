@@ -1,0 +1,33 @@
+/*---------OVERALL PAGE SETUP--------*/
+
+ html {
+   font-family: Tahoma, Verdana, Segoe, sans-serif;
+ }
+
+ body {
+    margin:0 auto;
+    padding:0;
+    height:100%;
+    width: 700px;
+ }
+
+ h1, h2, h3, h4 {
+   font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+   padding-left: 5px;
+ }
+
+ p {
+   font-family: Tahoma, Verdana, Segoe, sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 20px;
+ }
+
+/*--------HEADER------------*/
+
+ header {
+    background:#3D3D3D;
+    padding:5px;
+    color: #F5FFF9;
+    font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+ }
