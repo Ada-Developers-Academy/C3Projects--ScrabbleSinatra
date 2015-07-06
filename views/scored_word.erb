@@ -1,0 +1,10 @@
+<tr>
+  <td><%= @word %></td>
+  <td><%= @score %></td>
+  <td><% if @word %>
+        <% @word.split("").each do |letter| %>
+          <%= "#{letter}: #{Scrabble.score_letter(letter)}" %>
+        <% end %>
+      <% end %>
+  </td>
+</tr>

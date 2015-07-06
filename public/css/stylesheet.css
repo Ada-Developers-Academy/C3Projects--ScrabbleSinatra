@@ -1,0 +1,20 @@
+body {
+  width: 960px;
+  font-family: Brushstroke, fantasy;
+  font-size: 18px;
+  padding: 100px;
+  color: #8a6e6c;
+  margin: auto;
+  background: url("/images/background.png") no-repeat center;
+  background-size: cover;
+}
+
+table, th, td {
+	border:	1px solid black;
+	text-align: left;
+	padding: 5px;
+}
+
+a {
+  margin: 0 10px;
+}

@@ -1,0 +1,19 @@
+<a href="/">Home</a>
+<a href="/score_multiple">Score multiple words</a>
+
+<h2>Type in a word to be scored, and click submit.</h2>
+
+<form action="" method="post" accept-charset="utf-8">
+
+  <label for="word">Word:</label>
+  <input type="text" name="word" id="word">
+
+  <input type="submit" value="Submit">
+</form>
+
+<% if @word %>
+	<table>
+		<%= erb :table_header %>
+		<%= erb :scored_word %>
+	</table>
+<% end %>
