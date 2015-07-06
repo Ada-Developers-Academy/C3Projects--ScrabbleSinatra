@@ -1,0 +1,4 @@
+  <p> <% k.to_s.each_char do |char|%></p>
+    <% letter_value = Scrabble::ScoreWord.score_letter(char)%>
+    <h3>Letter: <%= char %>, Score: <%= letter_value %></h3>
+  <% end %>

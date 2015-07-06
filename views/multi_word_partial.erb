@@ -1,0 +1,4 @@
+<% @final_words_score.each do |k, v|%>
+  <h2>Word: <%= k.to_s %>, Score: <%= v %></h2>
+  <%= erb :letter_value_partial, :locals => { :k => k} %>
+  <% end %>
