@@ -1,0 +1,2 @@
+require './ScrabbleSinatra'
+run ScrabbleSinatra

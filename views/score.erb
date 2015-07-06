@@ -1,0 +1,32 @@
+<h1>Score!</h1>
+<h2> Below is the form for scoring.</h2>
+
+<form method="post" accept-charset="utf-8">
+  <!-- UTF-8 accepts all characters, but Scrabble.rb only accepts letters. -->
+  <label for="word">Word</label>
+  <input type="text" name="word" id="word">
+
+  <input type="submit">
+
+</form>
+
+<p>
+  Your word is: <%= @word %>.
+</p>
+<p>
+  Your score is: <%= @score %>.
+</p>
+
+<p>
+  Your point-by-point, letter-by-letter breakdown is as follows:
+</p>
+
+<p>
+  The Letters: <%= @letters %>
+</p>
+
+<p>
+  The Scores: <%= @letter_scoring %>
+</p>
+
+<a href="/">Home</a>
