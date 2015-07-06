@@ -1,0 +1,21 @@
+html{
+  background-image: url("/images/scrabble.jpg")
+}
+
+body{
+  width: 960px;
+  height: 400px;
+  padding: 15px;
+  margin: 100px auto;
+  font-family: 'Exo', sans-serif;
+  color: #fff;
+  background-color: #477187;
+}
+
+h1{
+  1.75em;
+}
+
+form{
+  font-size: 32px;
+}
